@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<%- include('../partials/seo.html') %>
+
+	<title>
+		<%=unseenNotifications%>Chattr - Account Disabled
+	</title>
+	<link href="/styles/disabled.css" rel="stylesheet" type="text/css" />
+	<script src="/socket.io/socket.io.js">
+	</script>
+</head>
+
+<body>
+	<div id="background-styles">
+		<div id="slanted-div-a"></div>
+	</div>
+	<div id="nav-bar">
+		<img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
+    </div>
+    <main>
+      <div id="disabled-area">
+        <p id="title">Account Disabled</p>
+        <div id="divider"></div>
+        <h2 id="subtitle">REASON</h2>
+        <p id="description"><%=panelReason%></p>
+        <h2 id="subtitle">LENGTH</h2>
+        <p id="description"><%=panelLength%></p>
+        <div id="Logout">LOGOUT</div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/master.js"></script>
+  </body>
+</html>

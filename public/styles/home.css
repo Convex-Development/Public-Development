@@ -1,0 +1,194 @@
+main {
+	width: 100%;
+	column-count: 2;
+  	column-gap: 0.5em;
+	padding: 3.5em 0.5em 0.5em 0.5em;
+	min-height: 100vh;
+}
+
+.card {
+	width: calc(100% - 0.5em);
+	margin: 0.5em;
+	padding: 1em;
+	display: inline-flex;
+	flex-direction: column;
+	background: whitesmoke;
+	box-shadow: 0 0 0.5em silver;
+	border-radius: 8px;	
+}
+.title {
+	color: #555;
+	font-size: 1.4em;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	align-self: flex-start;
+	margin: 0 0 0.5em 0;
+	border-bottom: 1px solid #555;
+}
+.double {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.double > div:first-child {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.double > div .option {
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	margin: 0 0.5em;
+	cursor: pointer;
+	background: #555;
+}
+#create-post-input {
+  border: 1.1px solid #555;
+  outline: none;
+  margin: 0.5em auto;
+  width: 100%;
+  height: 2.5em;
+  border-radius: 2px;
+  text-align: left;
+  text-indent: 3%;
+  font-size: 1em;
+  background: transparent;
+  transition: 0.3s;
+}
+#submit-post{
+	border: 2px solid grey;
+	background: grey;
+	color: #f9f9f9;
+	padding: 0.2em 0.5em;
+	font-size: 1.1em;
+	width: 4em;
+	cursor: pointer;
+	border-radius: 2px;
+	transition: background 0.2s ease;
+}
+#submit-post:hover {
+	background: #555;
+}
+
+
+#empty-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+  background: transparent;
+}
+
+#empty-message {
+  font-size: 1.3em;
+  justify-self: center;
+  align-self: center;
+  color: #55555555;
+  background: transparent;
+}
+
+/* FRIENDS AREA */
+
+#friends-area-see-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 1.9em;
+  font-size: 1.2em;
+  margin-left: auto;
+  text-align: right;
+  text-decoration-line: none;
+  cursor: pointer;
+  color: #555555;
+  background: transparent;
+}
+#friends-container > #empty-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 4.3em;
+  width: 100%;
+  background: transparent;
+}
+
+#friends-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  width: 95%;
+  background: transparent;
+}
+
+#friends-container > a {
+  margin: .1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+  width: 6em;
+  height: 6em;
+  background: transparent;
+}
+
+#friends-container > a:hover {
+  transition: .1s;
+  transform: scale(1.03);
+}
+
+#friends-container > a > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  border: 2px solid rgb(235, 235, 235);
+  overflow: hidden;
+  background: transparent;
+}
+
+#friends-container > a > div > img {
+  height: 100%;
+  background: transparent;
+}
+
+#friends-container > a > p {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .9em;
+  overflow: hidden;
+  color: #262626;
+  background: transparent;
+}
+
+/* HELP AREA */
+
+/* DARK THEME */
+
+body[theme="dark"] .card{
+  background: rgb(77, 76, 76)
+}
+
+body[theme="dark"] #create-post-input {
+  border: 1.1px solid rgb(177, 176, 176);
+}
+
+body[theme="dark"] #post-options > #option,
+body[theme="dark"] #post-options > #post-option {
+  background: rgb(102, 100, 100)
+}
+@media only screen and (max-width: 768px) {
+	main {
+		column-count: 1;
+	}
+}

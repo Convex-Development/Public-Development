@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/651993623021355018/660395403908481064/cattrdarkgrey.png" type="image/png">
+    <title>Chattr - Pricing</title>
+    <link href="/styles/pricing.css" rel="stylesheet" type="text/css"/>
+    <link href="/styles/master.css" rel="stylesheet" type="text/css"/>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body theme="<%=darkTheme%>">
+    <div id="background-styles">
+      <div id="slanted-div-a"></div>
+    </div>
+    <div id="nav-bar">
+      <img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
+    </div>
+    <main>
+      <h2 class="title">Prices made fair</h2>
+      <div class="short-line"></div>
+      <p class="description">Our premium memberships can offer you many benifits, all of the benifts offered will be listed below with the deal they are in. All deals will come along with a slider, so you can choose the amount of time that you want to purchase the membership for.</p>
+      <div class="short-line"></div>
+      <div class="deals-container">
+        <div class="deal" id="bronze-membership">
+          <div class="golden-membership-cover" id="bronze-membership-button"></div>
+          <div class="front-face" id="front-face-b">
+            <div class="img">
+              <p class="price">$1.75/mo</p>
+            </div>
+            <div class="sub-line"></div>
+            <div class="sub-title-container">
+              <h2 class="sub-title">Bronze Membership</h2>
+            </div>
+            <div class="sub-privelage-container-b">
+              <p>50% less ads</p>
+              <p>Invite friends to events</p>
+              <p>Bronze username</p>
+              <p>1,250 word descriptions</p>
+              <p>Access to premium membership games</p>
+            </div>
+            <div class="purchase_button">Purchase</div>
+          </div>
+          <div class="back-face" id="back-face-b">
+            <div class="back-face-front" id="back-face-b-front">
+              <div class="img">
+                <p class="titleA1">Payment Method</p>
+              </div>
+              <div class="sub-lineA1"></div>
+              <div class="sub-title-container-A1">
+                <div class="option" id="credit-card1">Credit Card</div>
+                <div class="option" id="debit-card1">Debit Card</div>
+              </div>
+              <div class="cancel" id="cancel-b">Cancel</div>
+            </div>
+          </div>
+          <div class="back-face-back" id="back-face-b-back">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Credit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="tel" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob5" onclick="slide2();"/>
+              <h2 class="titleA2" id="gold-scroll-info5">1 month - $1.75</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+          <div class="back-face-back" id="back-face-b-back-debit">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Debit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="tel" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob4" onclick="slide2();"/>
+              <h2 class="titleA2" id="gold-scroll-info4">1 month - $1.75</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+        </div>
+        <div class="deal" id="gold-membership">
+          <div class="golden-membership-cover" id="golden-membership-button"></div>
+          <div class="front-face" id="front-face-g">
+            <div class="img">
+              <p class="price">$5/mo</p>
+            </div>
+            <div class="sub-line"></div>
+            <div class="sub-title-container">
+              <h2 class="sub-title">Golden Membership<br><b>[BEST DEAL!!!]</b></h2>
+            </div>
+            <div class="sub-privelage-container-g">
+              <p>No ads</p>
+              <p>Invite friends to events</p>
+              <p>Cheaper ad prices (-25%)</p>
+              <p>Golden username</p>
+              <p>Customizable profile background</p>
+              <p>2500 word descriptions</p>
+              <p>Sell games</p>
+              <p>Access to premium membership games</p>
+            </div>
+            <div class="purchase_button">Purchase</div>
+          </div>
+          <div class="back-face" id="back-face-g">
+            <div class="back-face-front" id="back-face-g-front">
+              <div class="img">
+                <p class="titleA1">Payment Method</p>
+              </div>
+              <div class="sub-lineA1"></div>
+              <div class="sub-title-container-A1">
+                <div class="option" id="credit-card">Credit Card</div>
+                <div class="option" id="debit-card">Debit Card</div>
+              </div>
+              <div class="cancel" id="cancel-g">Cancel</div>
+            </div>
+          </div>
+          <div class="back-face-back" id="back-face-g-back">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Credit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="tel" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob" onclick="slide2();"/>
+              <h2 class="titleA2" id="gold-scroll-info">1 month - $5.00</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+          <div class="back-face-back" id="back-face-g-back-debit">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Debit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="text" placeholder="123">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob1" onclick="slide2();"/>
+              <h2 class="titleA2" id="gold-scroll-info1">1 month - $5.00</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+        </div>
+        <div class="deal" id="royalty-membership">
+          <div class="golden-membership-cover" id="royalty-membership-button"></div>
+          <div class="front-face" id="front-face-r">
+            <div class="img">
+              <p class="price">$7/mo</p>
+            </div>
+            <div class="sub-line"></div>
+            <div class="sub-title-container">
+              <h2 class="sub-title">Royalty Membership</h2>
+            </div>
+            <div class="sub-privelage-container-p">
+              <p>No ads</p>
+              <p>Invite friends to events</p>
+              <p>Cheaper ad prices (-50%)</p>
+              <p>Purple username</p>
+              <p>Customizable profile background</p>
+              <p>5000 word descriptions</p>
+              <p>Sell games</p>
+              <p>Access to premium membership games</p>
+            </div>
+            <div class="purchase_button">Purchase</div>
+          </div>
+          <div class="back-face" id="back-face-r">
+            <div class="back-face-front" id="back-face-r-front">
+              <div class="img">
+                <p class="titleA1">Payment Method</p>
+              </div>
+              <div class="sub-lineA1"></div>
+              <div class="sub-title-container-A1">
+                <div class="option" id="credit-card2">Credit Card</div>
+                <div class="option" id="debit-card2">Debit Card</div>
+              </div>
+              <div class="cancel" id="cancel-r">Cancel</div>
+            </div>
+          <div class="back-face-back" id="back-face-r-back">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Credit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="tel" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob2"/>
+              <h2 class="titleA2" id="gold-scroll-info2">1 month - $7.00</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+          <div class="back-face-back" id="back-face-r-back-debit">
+            <div class="imgA1">
+              <p class="titleA1">Billing Info</p>
+            </div>
+            <div class="sub-lineA1"></div>
+            <h2>Name</h2>
+            <input type="text" placeholder="John">
+            <h2>Debit Card Number</h2>
+            <input type="tel" placeholder="0000-0000-0000-0000" maxlength="19">
+            <div class="expiration_Sec_Code-Container">
+              <div class="exp_container">
+                <h2>Expiration Date</h2>
+                <input type="text" placeholder="12/23" maxlength="5">
+              </div>
+              <div class="cvc_container">
+                <h2>Security Pin</h2>
+                <input type="tel" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="scrollbar-container">
+              <input type="range" min="1" max="12" value="0"  class="music-player-range" id="scroll-bar-knob3"/>
+              <h2 class="titleA2" id="gold-scroll-info3">1 month - $7.00</h2>
+            </div>
+            <div class="next">Next</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/master.js"></script>
+    <script src="/scripts/pricing.js"></script>
+  </body>
+</html>

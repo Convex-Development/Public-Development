@@ -1,0 +1,15 @@
+main{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+main > h1{
+	font-weight: 400;
+	font-size: 2em;
+	z-index: 100;
+	background-color: transparent;
+	user-select: none;
+}

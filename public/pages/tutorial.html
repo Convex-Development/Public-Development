@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/651993623021355018/660395403908481064/cattrdarkgrey.png" type="image/png">
+    <title>Chattr - Get Started</title>
+    <link href="/styles/master.css" rel="stylesheet" type="text/css"/>
+    <link href="/styles/tutorial.css" rel="stylesheet" type="text/css"/>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body theme="<%=darkTheme%>">
+    <div id="nav-bar">
+      <img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
+    </div>
+    <main>
+      <div class="row-box">
+        <div class="arrow" id="arrow-left"><div class="drawing-left"></div></div>
+        <div class="welcome-box">
+          <div class="row-container">
+            <div class="column-container">
+              <p class="title" id="center">Set that profile pic!</p>
+              <div class="profile-picture"><img src="https://media.discordapp.net/attachments/651993623021355018/690969100519735326/unknown.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="arrow" id="arrow-right"><div class="drawing-right"></div></div>
+      </div>
+      
+      <div class="circle-container">
+        <div class="circle" id="circle-1"></div>
+        <div class="circle" id="circle-2"></div>
+        <div class="circle" id="circle-3"></div>
+        <div class="circle" id="circle-4"></div>
+        <div class="circle" id="circle-5"></div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      const username = `<%=username%>`
+    </script>
+    <script src="/scripts/master.js"></script>
+    <script src="/scripts/tutorial.js"></script>
+</body>
+</html>

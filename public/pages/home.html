@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('../partials/seo.html') %>
+	<title>
+		(<%=notifications.length%>) Chattr
+	</title>
+	<link href="/styles/home.css" rel="stylesheet" type="text/css" />
+	<script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+	<script src="/scripts/master.js" defer></script>
+    <script src="/scripts/home.js" defer></script>
+</head>
+<body theme="<%=settings.mode%>">
+	<%- include('../partials/header.html')%>
+    <!-- panel -->
+    <main>
+        <div id="welcome-area" class="card limit">
+          <h2 class="title"><span>Welcome</span>, <%=username%></h2>
+          <input type="text" id="create-post-input" placeholder="How is your day going?">
+          <div class="double">
+			<div>
+				<div class="option"></div>
+				<div class="option"></div>
+				<div class="option"></div>
+				<div class="option"></div>
+			</div>
+            <button id="submit-post">Post!</button>
+          </div>
+        </div>
+        <div id="post-area" class="card">
+          <h2 class="title">Recent posts</h2>
+          <div id="empty-area">
+            <h2 id="empty-message">No posts were found!</h2>
+          </div>
+        </div>
+        <div id="friends-area" class="card">
+            <h2 class="title">Your Friends</h2>
+            <div id="friends-container">
+              <%=profile.friends%>
+            </div>
+            <a id="friends-area-see-more" href="/community">See all</a>
+        </div>
+        <div id="help-area" class="card">
+          <h2 class="title">Trending content</h2>
+          <div id="empty-area">
+            <h2 id="empty-message">No content was found!</h2>
+          </div>
+        </div>
+    </main>
+	<%- include('../partials/footer.html')  %>
+</body>
+</html>

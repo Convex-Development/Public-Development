@@ -1,0 +1,603 @@
+#admin-panel {
+  position: fixed;
+  bottom: -500vh;
+  right: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+  z-index: 50;
+  overflow: hidden;
+  background: #262626;
+}
+
+#admin-panel > #background-styles {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: transparent;
+}
+
+#admin-panel > #background-styles > #slanted-div {
+  position: relative;
+  overflow: hidden;
+  width: 180%;
+  height: 200%;
+  margin-right: 44vw;
+  transform: rotate(60deg);
+  background: #92929291;
+}
+
+#admin-panel > #admin-panel-main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 92%;
+  z-index: 10;
+  background: transparent;
+}
+
+#panel-nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 8%;
+  z-index: 10;
+  background: rgb(92, 92, 92) !important;
+}
+
+#panel-nav-bar > #panel-nav-title {
+  font-size: 1.2em;
+  margin-right: auto;
+  margin-left: 1vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #d4d4d4;
+  z-index: 10;
+  background: transparent;
+}
+
+#panel-nav-bar > #panel-nav-page, #panel-nav-bar > #panel-nav-user-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 1.5em;
+  overflow: hidden;
+  font-size: 1em;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #d4d4d4;
+  z-index: 10;
+  background: transparent;
+}
+
+#panel-nav-bar > #panel-nav-exit {
+  margin: auto .5vw;
+  font-size: 1.7vw;
+  cursor: pointer;
+  color: red;
+  background: transparent;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-left {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(114, 114, 114) !important;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-right {
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 75%;
+  height: 100%;
+  background: transparent !important;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-left > .panel-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 100%;
+  font-size: 1em;
+  transition: .1s;
+  cursor: pointer;
+  background: transparent;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-left > .panel-option:hover {
+  background: rgba(0, 171, 250, 0.205);
+}
+
+#admin-panel > #admin-panel-main-content > #panel-left > .panel-option > p {
+  font-size: 1.1em;
+  justify-self: center;
+  align-self: center;
+  color: #d4d4d4;
+  background: transparent;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-right > #users {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-right > #users > .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  transition: .2s;
+  cursor: pointer;
+  height: 3em;
+  width: 100%;
+  background: transparent;
+} 
+
+#admin-panel > #admin-panel-main-content > #panel-right > #users > .user > img {
+  height: 50%;
+  margin-left: auto;
+  margin-right: 1vw; 
+  background: transparent;
+}
+
+#admin-panel > #admin-panel-main-content > #panel-right > #users > .user > .username {
+  margin-left: 1vw;
+  font-size: 1.3em;
+  justify-self: center;
+  align-self: center;
+  color: #d4d4d4;
+  background: transparent;
+}
+
+#admin-panel > #panel-nav-bar > #panel-nav-rank {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 1.5em;
+  overflow: hidden;
+  font-size: 1em;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #d4d4d4;
+  z-index: 10;
+  background: transparent;
+}
+
+@keyframes tweenXflip {
+  from{visibility: hidden; transform: rotateX(0deg)}
+  to{visibility: visible; transform: rotateX(180deg)}
+}
+
+@keyframes tweenXsize {
+  from{visibility: hidden; height: unset}
+  to{visibility: visible; height: 0;}
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 5em;
+  background: transparent;
+}
+
+.info-bit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 93%;
+  margin: .2vw 0;
+  min-height: 1em;
+  background: transparent;
+}
+
+.info-bit > .important-title {
+  align-self: flex-start !important;
+  text-align: left;
+  min-width: 5%;
+  font-size: .9em;
+  color: #b4b4b4;
+  background: transparent;
+}
+
+.info-bit > .desc {
+  margin-left: auto;
+  width: 88%;
+  text-align: left;
+  font-weight: bold;
+  font-size: .9em;
+  color: #a5c200;
+  background: transparent;
+}
+
+.info-bit > #ban, .info-bit > #warn, .info-bit > #offenses , .info-bit > #rank, .info-bit > #revoke, .info-bit > #give-rank  {
+  cursor: pointer;
+  padding: 0 .3vw;
+  margin-top: .5vh;
+  margin-bottom: .5vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: .3vw;
+  height: 1.4em;
+  transition: .2s;
+  border: red solid 1px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .9em;
+  color: red;
+  background: transparent;
+}
+
+.info-bit > #ban:hover {
+  background: rgba(255, 0, 0, 0.404);
+}
+
+.info-bit > #warn {
+  margin-left: .3vw;
+  border: yellow solid 1px;
+  color: yellow;
+}
+
+.info-bit > #warn:hover {
+  background: rgba(255, 230, 0, 0.404);
+}
+
+.info-bit > #offenses {
+  margin-left: .3vw;
+  border: white solid 1px;
+  color: white;
+}
+
+.info-bit > #offenses:hover {
+  background: rgba(255, 255, 255, 0.404);
+}
+
+.info-bit > #rank, .info-bit > #give-rank {
+  margin-left: .3vw;
+  border: rgb(72, 255, 0) solid 1px;
+  color: rgb(72, 255, 0) ;
+}
+
+.info-bit > #give-rank {
+  margin-left: auto;
+}
+
+.info-bit > #rank:hover, .info-bit > #give-rank:hover {
+  background: rgb(72, 255, 0, 0.404) ;
+}
+
+.info-bit > #revoke {
+  margin-left: auto;
+  border: yellow solid 1px;
+  color: yellow;
+}
+
+.info-bit > #revoke:hover {
+  background: rgba(255, 230, 0, 0.404);
+}
+
+#consequence-title {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+  width: 95%;
+  margin: 1vh auto; 
+  color: #b4b4b4;
+  font-size: 1.4em;
+  background: transparent;
+}
+
+#consequence-sub-title {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+  width: 95%;
+  margin: 1vh auto; 
+  color: #b4b4b4;
+  font-size: .95em;
+  background: transparent;
+}
+
+#reason-box, #length-box {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  text-align: left;
+  outline: none;
+  padding: .4vh .3vw;
+  width: 95%;
+  min-height: 8em;
+  margin: 1vh auto; 
+  cursor: text;
+  border-radius: 5px;
+  color: #ffffff !important;
+  font-size: .95em;
+  background: #c0c0c017;
+}
+
+[contentEditable=true]:empty:before {
+  content: attr(data-text);
+  color: #f0f0f083;
+}
+
+#length-box {
+  min-height: unset;
+  height: 1.2em !important;
+}
+
+#disable-account-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding: 0 .3vw;
+  margin-bottom: .5vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 2em;
+  width: 95%;
+  transition: .2s;
+  border: red solid 1px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .9em;
+  color: red;
+  background: transparent;
+}
+
+#disable-account-button:hover {
+  background: rgba(255, 0, 0, 0.404);
+}
+
+#saftey-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 95%;
+  height: 65%;
+  margin: 1vh auto; 
+  color: #b4b4b4;
+  font-size: 1.45em;
+  background: transparent;
+}
+
+#confirm-disable-account-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding: 0 .3vw;
+  margin-bottom: 1vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 2em;
+  width: 95%;
+  transition: .2s;
+  border: rgb(60, 255, 0) solid 1px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .9em;
+  color: rgb(60, 255, 0);
+  background: transparent;
+}
+
+#confirm-disable-account-button:hover {
+  background: rgba(60, 255, 0, 0.404);
+}
+
+#cancel-disable-account-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding: 0 .3vw;
+  margin-bottom: 1vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 2em;
+  width: 95%;
+  transition: .2s;
+  border: rgb(255, 0, 0) solid 1px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .9em;
+  color: rgb(255, 0, 0);
+  background: transparent;
+}
+
+#cancel-disable-account-button:hover {
+  background: rgba(255, 0, 0, 0.404);
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  cursor: default;
+  width: 100%;
+  height: 1.6em;
+  font-size: 1em;
+  color: #b4b4b4;
+  background: transparent;
+}
+
+.action > p {
+  margin: auto 1vw;
+  margin-right: auto;
+  color: #b4b4b4;
+  background: transparent;
+}
+
+.action:hover {
+  background: #ffffff36
+}
+
+.empty-feild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1.3em;
+  color: #b4b4b467;
+  background: transparent;
+}
+
+#up-arrow {
+  transform: rotate(180deg)
+}
+
+#toggle-admin-panel {
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  padding-left: 1vw;
+  bottom: 0;
+  right: .5vw;
+  width: 10em;
+  height: 2vw;
+  border-radius: 5px 5px 0px 0px;
+  color: #d4d4d4;
+  background: #262626;
+}
+
+.cmd-line, .cmd-prompt-history, 
+.cmd-prompt-history-success, 
+.cmd-prompt-history-error, 
+.cmd-prompt-history-warning, 
+.cmd-prompt-history-error-nm, 
+.cmd-prompt-history-success-nm,
+.cmd-prompt-history-help-cmd {
+  overflow: visible;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: .2em .6em;
+  cursor: text;
+  text-align: left;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  height: 1.3em;
+  background: transparent;
+}
+
+.cmd-prompt-history-help-cmd {
+  text-indent: 1.5em;
+}
+
+.cmd-prompt-history-help-cmd > span {
+  overflow: visible;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: .05em .1em;
+  cursor: text;
+  text-align: center;
+  outline: none;
+  color: rgb(180, 89, 89);
+  font-size: 1em;
+  height: 1.3em;
+  width: fit-content;
+  background: transparent;  
+}
+
+.cmd-prompt-history-help-cmd > span[id="int"] {
+  color: rgb(0, 153, 255);
+}
+
+.cmd-prompt-history-help-cmd > span[id="void"] {
+  color: rgb(143, 0, 0);
+}
+
+.cmd-line {
+  overflow: hidden;
+}
+
+.cmd-line * {
+  background: transparent;
+}
+
+.cmd-prompt-history-success {
+  font-weight: bold;
+  color: rgb(19, 223, 0) !important;
+}
+
+.cmd-prompt-history-error {
+  font-weight: bold;
+  color: rgb(223, 0, 0) !important;
+}
+
+.cmd-prompt-history-error-nm {
+  text-indent: 1.2em;
+  margin: .02em .6em;
+  font-weight: bold;
+  color: rgb(255, 0, 0) !important; 
+}
+
+.cmd-prompt-history-success-nm {
+  text-indent: 1.2em;
+  margin: .02em .6em;
+  font-weight: bold;
+  color: rgb(19, 223, 0) !important;
+}
+
+
+.cmd-prompt-history-warning {
+  font-weight: bold;
+  color: rgb(223, 208, 0) !important;
+}

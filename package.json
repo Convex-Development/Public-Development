@@ -1,0 +1,38 @@
+{
+  "name": "Chattr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@firebase/firestore": "^1.15.5",
+    "@google-cloud/storage": "^4.6.0",
+    "algoliasearch": "^4.3.0",
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.5",
+    "crypto-js": "^4.0.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "firebase": "^7.15.5",
+    "firebase-admin": "^8.10.0",
+    "firesql": "^2.0.2",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.6",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chattr-Team/Chattr-Official.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chattr-Team/Chattr-Official/issues"
+  },
+  "homepage": "https://github.com/Chattr-Team/Chattr-Official#readme"
+}

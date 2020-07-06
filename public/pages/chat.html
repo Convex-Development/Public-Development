@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<%- include('../partials/seo.html') %>
+
+	<title>
+		<%=notifications.length%>Chattr - Chat
+	</title>
+	<link href="/styles/chat.css" rel="stylesheet" type="text/css" />
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body theme="<%=settings.mode%>">
+	<div id="nav-bar">
+		<img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
+      <div id="divider"></div>
+      <a id="profile" href="/profile/<%=token%>">Profile</a>
+      <div id="divider"></div>
+      <a id="community" href="/community">Community</a>
+      <div id="divider"></div>
+      <a id="chat" href="/chat">Chat</a>
+      <div id="divider"></div>
+      <a id="content" href="/content">Content</a>
+      <div id="divider"></div>
+      <input id="search-bar" type="text" placeholder="Search">
+      <img id="notification-bell" src="https://media.discordapp.net/attachments/651993623021355018/668679210642046976/unknown.png?width=300&height=300">
+      <a id="extra-options">|||</a>
+      
+    </div>
+    <div id="search-results"></div>
+    <div id="extra-options-area">
+      <div id="settings">
+        <p>Settings</p>
+      </div>
+      <div id="purchase">
+        <p>Pricing</p>
+      </div>
+      <div id="Logout">
+        <p>Logout</p>
+      </div>
+    </div>
+    <div id="notifications-area">
+      <div id="notification-flex-container">
+				<!-- need to organize notifications with html here-->
+        <%-notifications%>
+      </div>
+    </div>
+    <main>
+      <div id="left-area">
+        <div id="options-area">
+          <div id="header-container">
+            <h2 id="title">Conversations</h2>
+            <div id="add-chat">+</div>
+          </div>
+          <div id="divider"></div>
+          <div id="chats-area-container">
+            <div id="chats-area">
+              <%-chats%>
+            </div>
+          </div>
+          <!-- <div id="options-empty-area">
+            <p>No recent convos, find someone to chat with here!</p>
+            <div>Find friends!</div>
+          </div> -->
+        </div>
+      </div>
+      <div id="right-area">
+        
+        <div id="content-header">
+          
+        </div>
+        <div id="content-container">
+          
+          <!-- <div id="empty-area">
+            <div id="empty-message">Nobody was selected</div>
+          </div> -->
+          <div id="convo-area">
+            <div id="new-convo-area">
+              
+            </div>
+            <div id="message">
+              
+            </div>
+          </div>
+          <div id="message-box">
+            <div class="uploadWrapper">
+              <div id="attach-file"></div>
+              <input id="prompt-file" type="file" name="file" />
+            </div>
+            <div id="divider"></div>
+            <div id="message-container" contenteditable="true" data-text="Send a message"></div>
+            <div id="attach-emoji">
+              <img src="https://media.discordapp.net/attachments/651993623021355018/682349602242035750/emojiico.png"></img>
+            </div>
+          </div>
+        </div>
+        <p id="user-typing"></p>
+      </div>
+    </main>
+    <script>
+      const preloaduserid = `<%=token%>`
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/master.js"></script>
+    <script src="/scripts/chat.js"></script>
+  </body>
+</html>

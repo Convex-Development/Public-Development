@@ -1,0 +1,170 @@
+/* NAV-BAR */
+
+#nav-bar {
+  justify-content: center !important;
+}
+
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 3em;
+  height: 90%;
+}
+
+/* SCREEN LEFT */
+
+#left-area {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  min-height: 38em;
+  width: 23vw;
+  background: transparent;
+}
+
+/* OPTIONS AREA */
+
+#options-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 38em;
+  z-index: 150;
+  box-shadow: 2px 0px 8px 0px rgba(168,168,168,1);
+  background: #B9B9B9;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  text-indent: 8%;
+  height: 3em;
+  width: 100%;
+  font-size: 1em;
+  background: transparent;
+}
+
+#options-container {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+}
+
+#options-area > .option , #options-area > div > .option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 4em;
+  width: 100%;
+  font-size: 1em;
+  cursor: pointer;
+  background: transparent;
+}
+
+#options-area > .option:hover , #options-area > div > .option:hover {
+  transform: scale(1.1)
+}
+
+#options-area > #divider, #options-area > div > #divider {
+  height: .1px;
+  margin-top: .1vh;
+  margin-bottom: .1vh;
+  width: 90%;
+}
+
+/*text styles*/
+
+#text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  min-height: 38em;
+  width: 80%;
+  margin-left: 23vw;
+  background: transparent;
+}
+
+#text-area > #title {
+  text-align: left;
+  text-indent: 40%;
+  font-size: 1.8em;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  color: #555555;
+  background: transparent;
+}
+
+#text-area > #sub-title {
+  width: 100%;
+  text-align: left;
+  text-indent: 5%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 1.5em;
+  color: #555555;
+  background: transparent;
+}
+
+#text-area > #indented-sub-title {
+  width: 100%;
+  text-align: left;
+  text-indent: 5%;
+  font-size: 1.5em;
+  background: transparent;
+  margin-top: 2vh;
+  margin-left: 4%;
+  margin-bottom: 2vh;
+  color: #555555;
+  background: transparent;
+}
+
+#text-area > #indented-sub-title > i {
+  background: transparent;
+}
+
+#text-area > #paragraph {
+  width: 90%;
+  text-align: left;
+  text-indent: 4%;
+  font-size: 1.2em;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: #555555;
+  background: transparent;
+}
+
+#text-area > #paragraph > b {
+  background: transparent;
+}
+
+#text-area > #list-item {
+  width: 90%;
+  text-align: left;
+  text-indent: 5%;
+  font-size: 1.2em;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  color: #555555;
+  background: transparent;
+}
+
+#text-area > #list-item > b{
+  color: #555555;
+  background: transparent;
+}
+
+/* DARK THEME */
+
+body[theme="dark"] #options-area {
+  background: #555555
+}

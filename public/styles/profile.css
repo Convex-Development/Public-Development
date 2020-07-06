@@ -1,0 +1,457 @@
+main {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 10vh;
+  margin-top: 3em;
+}
+
+/* SCREEN LEFT */
+
+#left-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10vh;
+  width: 65%;
+  background: transparent;
+}
+
+/* NAME AREA */
+
+#name-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 13.5em;
+  width: 94%;
+  margin-top: 4vh;
+  border-radius: 8px;
+  background: #B9B9B9;
+}
+
+#name-area > #divider {
+  height: 1px;
+  width: 6vw;
+}
+
+#user-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 8em;
+  width: 8em;
+  border: 2px solid rgb(235, 235, 235);
+  border-radius: 50%;
+  margin: 1em 0 1em 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+#user-picture > img {
+  height: 100%;
+  background: transparent;
+}
+
+#username {
+  margin: .2em .1em .1em .1em;
+  font-size: 2.1vw;
+  background: transparent;
+}
+
+/* DESCRIPTION AREA */
+
+#description-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 94%;
+  margin-top: 4vh;
+  border-radius: 8px;
+  background: #B9B9B9;
+}
+
+#description-area-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 2em;
+  width: 100%;
+  font-size: 1.4em;
+  text-align: left;
+  text-indent: 3%;
+  color: #555555;
+  background: transparent;
+}
+
+#description-area > #divider {
+  align-self: flex-start;
+  height: 1px;
+  width: 9vw;
+  margin-left: 1.9vw;
+  margin-top: .1em;
+  margin-bottom: .7em;
+}
+
+#description-area > p {
+  min-height: 2em;
+  width: 94%;
+  margin: 0 3% 0 3%;
+  font-size: 1.1em;
+  text-align: left;
+  color: #555555;
+  background: transparent;
+}
+
+/* CONTENT AREA */
+
+#content-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 9.5em;
+  width: 94%;
+  margin-top: 4vh;
+  border-radius: 8px;
+  background: #B9B9B9;
+}
+
+#content-area-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 2em;
+  width: 100%;
+  font-size: 1.4em;
+  text-align: left;
+  text-indent: 3%;
+  color: #555555;
+  background: transparent;
+}
+
+#content-area > #divider {
+  align-self: flex-start;
+  height: 1px;
+  width: 17vw;
+  margin-left: 1.9vw;
+}
+
+#content-area > #empty-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+  background: transparent;
+}
+
+#empty-message {
+  font-size: 1.2em;
+  justify-self: center;
+  align-self: center;
+  color: #55555555;
+  background: transparent;
+}
+
+/* SCREEN RIGHT */
+
+#right-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 35%;
+  background: transparent;
+}
+
+/* CONNECT OPTIONS AREA */
+
+#connect-options-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 9.5em;
+  width: 94%;
+  margin: 4vh 1vw 0 0;
+  border-radius: 8px;
+  background: #B9B9B9;
+}
+
+#connect-options-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 2em;
+  width: 100%;
+  font-size: 1.4em;
+  text-align: center;
+  text-indent: 3%;
+  color: #555555;
+  background: transparent;
+}
+
+#connect-options-area > #divider {
+  height: 1px;
+  width: 10vw;
+  margin: 0 0 .5em 1.9vw;
+}
+
+#connect-options-area > #option {
+  align-items: center;
+  width: 100%;
+  height: 2.5em;
+  cursor: pointer;
+  transition: .5ms;
+  background: transparent;
+}
+
+#connect-options-area > #option > h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1em;
+  background: transparent;
+}
+
+#connect-options-area > #option:hover {
+  transform: scale(1.07);
+}
+
+/* PROFILE INFORMATION AREA */
+
+#profile-info-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 12em;
+  width: 94%;
+  margin: 4vh 1vw 0 0;
+  border-radius: 8px;
+  background: #B9B9B9;
+}
+
+#profile-info-options {
+  display: flex;
+  flex-direction: row;
+  height: 6vh;
+  width: 100%;
+  background: transparent;
+}
+
+#profile-info-options > .option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  font-size: 1em;
+  transition: .5ms;
+  cursor: pointer;
+  background: transparent;
+}
+
+#profile-info-options > .option:hover {
+  transform: scale(1.05);
+}
+
+#profile-info-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 93%;
+  margin: 0 auto 0 auto;
+  min-height: 75%;
+  background: transparent;
+}
+
+#profile-info-display > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: .2em;
+  align-items: center;
+  text-decoration-line: none;
+  width: 6em;
+  height: 6em;
+  background: transparent;
+}
+
+#profile-info-display > a:hover {
+  transition: .1s;
+  transform: scale(1.03);
+}
+
+#profile-info-display > a > div {
+  margin: 0;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  background: transparent;
+}
+
+#profile-info-display > a > p {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .9em;
+  overflow: hidden;
+  color: #262626;
+  background: transparent;
+}
+
+#profile-info-display > #empty-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 8em;
+  background: transparent;
+}
+
+#profile-info-display > #empty-area > h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* SOCIAL MEDIA LINKS */
+
+#social-media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin: .5em 0 .2em 0;
+  width: 96%;
+  background: transparent;
+}
+
+#social-media-container > ul {
+  z-index: 15;
+  background: transparent;
+  bottom:0%;
+  left:0%;
+  padding:0;
+  display:flex;
+}
+
+#social-media-container > ul li {
+  list-style: none;
+  background: transparent;
+}
+
+#social-media-container > ul li a {
+  width:45px;
+  height:45px;
+  display:block;
+  text-align:center;
+  border-radius: 50%;
+  margin: .5px;
+  padding: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: transparent;
+  transition: .2s;
+}
+
+#social-media-container > ul li a .fa {
+  width: 100%;
+  height: 100%;
+  display:block;
+  cursor: pointer;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(60px - 24px);
+  font-size:15px;
+  color: #262626;
+  transition: .2s;
+}
+
+#social-media-container > ul li:nth-child(1) a:hover .fa, 
+#social-media-container > ul li:nth-child(2) a:hover .fa,
+#social-media-container > ul li:nth-child(3) a:hover .fa,
+#social-media-container > ul li:nth-child(4) a:hover .fa,
+#social-media-container > ul li:nth-child(5) a:hover .fa {
+  transform: scale(1.1);
+}
+
+/* special roles */
+
+.special-title {
+  margin: .2em 0 .5em 0;
+  font-size: .5em;
+  font-weight: bolder;
+  background: transparent;
+}
+
+#vip-title {
+  color: #0075a3;
+  text-shadow: 0px 0px 11px #0075a3;
+}
+
+#content_creator-title {
+  color: #a38000;
+  text-shadow: 0px 0px 11px rgb(255, 238, 0);
+}
+
+#administrator-title {
+  color: rgb(0, 164, 0);
+  text-shadow: 0px 0px 11px rgb(106, 255, 6);
+}
+
+#support_team-title {
+  color: rgb(164, 0, 0);
+  text-shadow: 0px 0px 11px rgb(255, 0, 0);
+}
+
+#manager-title {
+  color: rgb(3, 22, 196);
+  text-shadow: 0px 0px 11px rgb(0, 81, 255);
+}
+
+#senior_manager-title {
+  color: transparent;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right , #f00, #ff0, #0ff, #00f);
+  -webkit-background-clip: text;
+  animation: animate 20s linear infinite;
+  background-size: 1000%;
+
+}
+
+@keyframes animate{
+  0%{
+    background-position: 0% 100%;
+  }
+
+  50%{
+    background-position: 100% 0%;
+  }
+
+  100%{
+    background-position: 0% 100%;
+  }
+}
+
+/* DARK THEME */
+
+body[theme="dark"] #name-area,
+body[theme="dark"] #description-area,
+body[theme="dark"] #content-area,
+body[theme="dark"] #connect-options-area,
+body[theme="dark"] #profile-info-area {
+  background: rgb(77, 76, 76)
+}
+
+body[theme="dark"] #social-media-container > ul li a .fa {
+  background: linear-gradient(0deg, rgb(182, 182, 182), rgb(170, 170, 170));
+  color: rgb(71, 71, 71) !important;
+}

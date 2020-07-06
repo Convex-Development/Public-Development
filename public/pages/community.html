@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('../partials/seo.html') %>
+	<title>
+		<%=notifications.length%>Chattr - Community
+	</title>
+	<link href="/styles/community.css" rel="stylesheet" type="text/css" />
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body theme="<%=settings.mode%>">
+	<div id="background-styles">
+		<div id="slanted-div-a"></div>
+		<div id="sun"></div>
+		<div id="moon"></div>
+	</div>
+	<div id="nav-bar">
+		<img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
+      <div id="divider"></div>
+      <a id="profile" href="/profile/<%=token%>">Profile</a>
+      <div id="divider"></div>
+      <a id="community" href="/community">Community</a>
+      <div id="divider"></div>
+      <a id="chat" href="/chat">Chat</a>
+      <div id="divider"></div>
+      <a id="content" href="/content">Content</a>
+      <div id="divider"></div>
+      <input id="search-bar" type="text" placeholder="Search">
+      <img id="notification-bell" src="https://media.discordapp.net/attachments/651993623021355018/668679210642046976/unknown.png?width=300&height=300">
+      <a id="extra-options">|||</a>
+      
+    </div>
+    <div id="search-results"></div>
+    <div id="extra-options-area">
+      <div id="settings">
+        <p>Settings</p>
+      </div>
+      <div id="purchase">
+        <p>Pricing</p>
+      </div>
+      <div id="Logout">
+        <p>Logout</p>
+      </div>
+    </div>
+    <div id="notifications-area">
+      <div id="notification-flex-container">
+        <%=notifications%>
+      </div>
+    </div>
+		<!-- I'm so confused what is panel (I took it out but it should probably be there) -->
+    <main>
+      <div id="left-area">
+        <div id="options-area">
+          <div id="community-btn" class="option">Community</div>
+          <div id="divider"></div>
+          <div id="friends-btn" class="option">Friends</div>
+          <div id="divider"></div>
+          <div id="followers-btn" class="option">Followers</div>
+          <div id="divider"></div>
+          <div id="following-btn" class="option">Following</div>
+        </div>
+      </div>
+      <div id="right-area">
+        <div id="content-header">
+          <h2 id="content-title">Community</h2>
+          <div id="divider"></div>
+        </div>
+        <div id="content-container">
+          <div id="empty-area">
+            <div id="empty-message">There is no community yet</div>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/master.js"></script>
+    <script src="/scripts/community.js"></script>
+		<!-- adminpanelscript -->
+  </body>
+</html>
