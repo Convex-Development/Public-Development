@@ -79,7 +79,7 @@ app.get('/', async (req, res) => {
 
 app.get('/home', (req, res) => { passUserToEjs(req, res, 'pages/home'); });
 
-app.get('/profile', (req, res) => { passUserToEjs(req, res, 'pages/profile'); });
+app.get('/profile', (req, res) => { passUserToEjs(req, res, 'pages/profile'); }); 
 
 app.get('/community', (req, res) => { passUserToEjs(req, res, 'pages/community'); }); 
 
@@ -88,8 +88,6 @@ app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 app.get('/content', (req, res) => { passUserToEjs(req, res, 'pages/content'); });
 
 app.get('/settings', (req, res) => { passUserToEjs(req, res, 'pages/settings'); });
-
-app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 
 app.get('/chat', (req, res) => { passUserToEjs(req, res, 'pages/chat'); });
 app.get('/email/*', async (req, res) => {
