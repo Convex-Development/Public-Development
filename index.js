@@ -1,4 +1,5 @@
 // Server
+
 const express = require('express'),
 	app = express(), 
 	cookieParser = require("cookie-parser"),
@@ -15,9 +16,11 @@ const express = require('express'),
 	mailer = require('./mailer'),
 	safety = require('./safety');
 
-app .engine('html', require('ejs').renderFile)
-	.set('views', path.join(__dirname, '/public'))
-	.set('view engine', 'html');
+const catchPromise = require('@adcharity/catch-promise').init()
+
+app.engine('html', require('ejs').renderFile)
+   .set('views', path.join(__dirname, '/public'))
+   .set('view engine', 'html');
 
 app	.use(express.json())
 	.use(express.urlencoded({ extended: true }))
@@ -41,9 +44,13 @@ const socket = require('socket.io'),
 async function passUserToEjs(req, res, page){
 	// console.log('getting cookies:', get_cookies(req)['session']);
 	// if (get_cookies(req)['session']) {
-		let token = get_cookies(req)['session'];
-		let user = await db.getUserBy('token', token);
-		res.render(page, user);
+		//let token = get_cookies(req)['session'];
+		//let user = await db.getUserBy('token', token);
+		res.render(page, {user: 'user', notifications: {}, profile: {
+			friends: [],
+			followers: [],
+			following: []
+		}, username: 's', token:'ohno', chats: [], email: ''});
 	// }
 	// else res.redirect('/');
 	// res.render('pages/login');
@@ -72,7 +79,7 @@ app.get('/', async (req, res) => {
 
 app.get('/home', (req, res) => { passUserToEjs(req, res, 'pages/home'); });
 
-app.get('/profile/:userid', (req, res) => { passUserToEjs(req, res, 'pages/profile'); });
+app.get('/profile', (req, res) => { passUserToEjs(req, res, 'pages/profile'); });
 
 app.get('/community', (req, res) => { passUserToEjs(req, res, 'pages/community'); }); 
 
@@ -84,6 +91,7 @@ app.get('/settings', (req, res) => { passUserToEjs(req, res, 'pages/settings'); 
 
 app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 
+app.get('/chat', (req, res) => { passUserToEjs(req, res, 'pages/chat'); });
 app.get('/email/*', async (req, res) => {
 	try{
 		let parts = safety.decrypt(req.path.split('/').slice(2).join('/')).split('⇝');

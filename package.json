@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@adcharity/catch-promise": "^1.0.3",
     "@firebase/firestore": "^1.15.5",
     "@google-cloud/storage": "^4.6.0",
     "algoliasearch": "^4.3.0",
