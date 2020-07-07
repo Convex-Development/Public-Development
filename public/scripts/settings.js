@@ -213,7 +213,7 @@ function renderAccount() {
       </div>
       <h2 id="sub-title">Your description</h2>
       <div id="user-description-container">
-        <div id="user-description" contenteditable="true" data-text="Hint: I LOVE CHATTR!">${userInfo.bio}</div>
+        <div id="user-description" contenteditable="true" data-text="Hint: I love Convex!">${userInfo.bio}</div>
       </div>
       <div id="save-container">
         <div id="save-bio" class="save-button">Save</div>

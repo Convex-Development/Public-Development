@@ -398,6 +398,12 @@ footer div:hover {
   color: #E5E5E5;
   cursor: pointer;
 }
+#home-button{
+  position: relative;
+  left: -1em;
+
+  width: 8em;
+}
 
 #reject-button {
   background: #b10000;
@@ -446,7 +452,7 @@ body[theme="dark"] #divider {
 }
 
 body[theme="dark"] #home-button, body[theme="dark"] #notification-bell {
-  filter: invert(1)
+  filter: invert(1);
 }
 
 body[theme="dark"] #notifications-area {
