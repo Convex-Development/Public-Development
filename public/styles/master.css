@@ -1,8 +1,9 @@
 :root {
 	--background-primary: #a5c2d491;
-	--background: #E5E5E5;
+	--background: rgb(248, 246, 246);
 	--dark-primary: #037bc0;
 	--light-primary: #00a3ee;
+  --navbar-background: rgb(190, 190, 190);
 }
 @font-face {
 	font-family: Azonix;
@@ -78,7 +79,7 @@ footer div:hover {
 	z-index: 10;
 	position: absolute;
 	left: 0; right: 0; top: 0;
-	background: var(--background);
+	background: var(--navbar-background);
 	box-shadow: 0 0 0.5em silver;
 }
 

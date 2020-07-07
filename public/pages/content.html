@@ -6,7 +6,7 @@
 	<%- include('../partials/seo.html') %>
 
 	<title>
-		<%=notifications.length%>Chattr - Content
+		<%=notifications.length%>Convex - Content
 	</title>
 	<link href="/styles/content.css" rel="stylesheet" type="text/css" />
 	<script src="/socket.io/socket.io.js">
@@ -14,36 +14,11 @@
 </head>
 <%- include('../partials/header.html') %>
 <body theme="<%=settings.mode%>">
-	<div id="background-styles">
-		<div id="slanted-div-a"></div>
 	</div>
 	
     <!-- panel -->
     <main>
-      <div id="left-area">
-        <div id="options-area">
-          <div id="games-btn" class="option">Games</div>
-          <div id="divider"></div>
-          <div id="videos-btn" class="option">Videos</div>
-          <div id="divider"></div>
-          <div id="music-btn" class="option">Music</div>
-          <div id="divider"></div>
-          <div id="posts-btn" class="option">Posts</div>
-          <div id="divider"></div>
-          <div id="usercontent-btn" class="option">Your content</div>
-        </div>
-      </div>
-      <div id="right-area">
-        <div id="content-header">
-          <h2 id="content-title">Games</h2>
-          <div id="divider"></div>
-        </div>
-        <div id="content-container">
-          <div id="empty-area">
-            <div id="empty-message">There are no games yet.</div>
-          </div>
-        </div>
-      </div>
+      
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/master.js"></script>
