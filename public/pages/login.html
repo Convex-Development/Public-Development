@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('../partials/seo.html') %>
+	<title>Convex</title>
+	<link href="/styles/login.css" rel="stylesheet" type="text/css" />
+	<!-- <script src="/socket.io/socket.io.js"></script> -->
+	<!-- <script src="/scripts/gottem.js" defer></script> -->
+	<!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
+  	<script src="/scripts/login.js" defer></script>
+</head>
+<body>
+	<div class="app">
+    <main class="fadeIn">
+<!-- Add logo in next line -->
+		<img id="home-button" src="">
+		<div id="signupbox" class="form">
+			<input placeholder="Username" autocomplete="off"/>
+			<input placeholder="Email" type="email" autocomplete="off"/>
+			<div class="double">
+				<input autocomplete="off" type="password" placeholder="Password"/>
+				<input onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" type="password" placeholder="Confirm Password"/>
+			</div>
+		</div>
+		<div id="loginbox" class="form" style="display: none">
+			<div class="double">
+			<input placeholder="Username or Email" autocomplete="off"/>
+			<input autocomplete="off" type="password" placeholder="Password"/>
+			</div>
+		</div>
+		<button>Register</button>
+		<a id="switch" class="text">Already have an account?<br>Login</a>
+	</main>
+	</div>
+</body>
+</html>

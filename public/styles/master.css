@@ -4,6 +4,11 @@
 	--dark-primary: #037bc0;
 	--light-primary: #00a3ee;
 }
+@font-face {
+	font-family: Azonix;
+	src: url("../Azonix.woff");
+}
+
 html, body {
 	box-sizing: border-box;
 	width: 100%;
@@ -11,9 +16,8 @@ html, body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
-	font-family: 'Chelsea Market', cursive;
+	font-family: Ubuntu;
 	background: var(--background);
-	background: linear-gradient(45deg, var(--background-primary) 0%, var(--background-primary) 45%, var(--background) 45%);
 }
 *, *::before, *::after {
 	box-sizing: inherit;

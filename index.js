@@ -11,7 +11,7 @@ const express = require('express'),
 	env = process.env,
 	path = require('path'),
 	fs = require('fs'),
-	db = require('./db'),
+  db = require('./db'),
 	mailer = require('./mailer'),
 	safety = require('./safety');
 
@@ -39,15 +39,16 @@ const socket = require('socket.io'),
 	io = socket(app.listen(3000));
 
 async function passUserToEjs(req, res, page){
-	console.log('getting cookies:', get_cookies(req)['session']);
-	if (get_cookies(req)['session']) {
+	// console.log('getting cookies:', get_cookies(req)['session']);
+	// if (get_cookies(req)['session']) {
 		let token = get_cookies(req)['session'];
 		let user = await db.getUserBy('token', token);
-		if (user) res.render(page, user);
-		else res.redirect('/');
-	}
-	else res.redirect('/');
+		res.render(page, user);
+	// }
+	// else res.redirect('/');
+	// res.render('pages/login');
 }
+
 
 // recieve objects, combine them
 app.get('/', async (req, res) => {
@@ -73,13 +74,15 @@ app.get('/home', (req, res) => { passUserToEjs(req, res, 'pages/home'); });
 
 app.get('/profile/:userid', (req, res) => { passUserToEjs(req, res, 'pages/profile'); });
 
-app.get('/community', (req, res) => { passUserToEjs(req, res, 'pages/community'); });
+app.get('/community', (req, res) => { passUserToEjs(req, res, 'pages/community'); }); 
 
-app.get('/chat', (req, res) => { passUserToEjs(req, res, 'pages/chat'); });
+app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 
 app.get('/content', (req, res) => { passUserToEjs(req, res, 'pages/content'); });
 
 app.get('/settings', (req, res) => { passUserToEjs(req, res, 'pages/settings'); });
+
+app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 
 app.get('/email/*', async (req, res) => {
 	try{

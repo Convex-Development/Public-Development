@@ -2,34 +2,12 @@
 <html>
 <head>
 	<%- include('../partials/seo.html') %>
-	<title>Chattr</title>
-	<link href="/styles/login.css" rel="stylesheet" type="text/css" />
-	<!-- <script src="/socket.io/socket.io.js"></script> -->
-	<!-- <script src="/scripts/gottem.js" defer></script> -->
-	<!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
-  	<script src="/scripts/login.js" defer></script>
+	<title>Convex</title>
 </head>
+<%- include('../partials/header.html') %>
+<link href = "../styles/index.css" rel="stylesheet" type="text/css">
 <body theme="<%=theme%>">
-	<div class="app">
-    <main class="fadeIn">
-		<img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
-		<div id="signupbox" class="form">
-			<input placeholder="Username" autocomplete="off"/>
-			<input placeholder="Email" type="email" autocomplete="off"/>
-			<div class="double">
-				<input autocomplete="off" type="password" placeholder="Password"/>
-				<input onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" type="password" placeholder="Confirm Password"/>
-			</div>
-		</div>
-		<div id="loginbox" class="form" style="display: none">
-			<div class="double">
-			<input placeholder="Username or Email" autocomplete="off"/>
-			<input autocomplete="off" type="password" placeholder="Password"/>
-			</div>
-		</div>
-		<button>Register</button>
-		<a id="switch" class="text">Already have an account?<br>Login</a>
-	</main>
-	</div>
+  <h1>This site is a work in progress. If you would like to help us make it a reality, join our server <a href='https://discord.gg/2AyfHjq'>here</a></h1>
+  <!-- <%- include('../partials/footer.html') %> -->
 </body>
 </html>
