@@ -526,6 +526,7 @@ p#description {
 
 body[theme="dark"] #options-area {
   background: #555555;
+  box-shadow: 0px 2px 5px 1px var(--light-primary);
 }
 
 body[theme="dark"] .info-container > img {

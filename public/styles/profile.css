@@ -453,6 +453,5 @@ body[theme="dark"] #profile-info-area {
 }
 
 body[theme="dark"] #social-media-container > ul li a .fa {
-  background: linear-gradient(0deg, rgb(182, 182, 182), rgb(170, 170, 170));
   color: rgb(71, 71, 71) !important;
 }

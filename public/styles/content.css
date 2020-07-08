@@ -1,136 +1,160 @@
 main {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  top: 3em;
-  height: 90%;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	top: 3em;
+	height: 90%;
 }
-
 /* SCREEN LEFT */
-
 #left-area {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  min-height: 38em;
-  width: 23vw;
-  background: transparent;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	min-height: 38em;
+	width: 23vw;
+	background: transparent;
 }
-
 /* OPTIONS AREA */
-
 #options-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  box-shadow: 2px 0px 8px 0px rgba(168,168,168,1);
-  background: #B9B9B9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	box-shadow: 2px 0px 8px 0px rgba(168,168,168,1);
+	background: #B9B9B9;
 }
-
 #options-area > .option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 4em;
-  width: 100%;
-  font-size: 1em;
-  cursor: pointer;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 4em;
+	width: 100%;
+	font-size: 1em;
+	cursor: pointer;
+	background: transparent;
 }
-
 #options-area > .option:hover {
-  transform: scale(1.1)
+	transform: scale(1.1)
 }
-
 #options-area > #divider {
-  height: .1px;
-  margin-top: .1vh;
-  margin-bottom: .1vh;
-  width: 90%;
+	height: .1px;
+	margin-top: .1vh;
+	margin-bottom: .1vh;
+	width: 90%;
 }
-
 /* SCREEN RIGHT */
-
 #right-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  min-height: 38em;
-  width: 75%;
-  margin-left: 23vw;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 38em;
+	width: 75%;
+	margin-left: 23vw;
+	background: transparent;
 }
-
 /* CONTENT AREA */
-
 #content-area {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 38em;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 38em;
+	background: transparent;
 }
-
 #content-header {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  height: 3em;
-  background: transparent;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	height: 3em;
+	background: transparent;
 }
-
 #content-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 99%;
-  font-size: 1.4em;
-  text-align: left;
-  text-indent: 3%;
-  color: #555555;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 99%;
+	font-size: 1.4em;
+	text-align: left;
+	text-indent: 3%;
+	color: #555555;
+	background: transparent;
 }
-
 #content-header > #divider {
-  height: 1px;
-  width: 16%;
-  margin-left: 2.6%;
+	height: 1px;
+	width: 16%;
+	margin-left: 2.6%;
 }
-
 #content-container {
-  display: flex;
-  flex-direction: column;
-  justify-self: end;
-  width: 100%;
-  height: 90%;
-  margin-top: 6%;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-self: end;
+	width: 100%;
+	height: 90%;
+	margin-top: 6%;
+	background: transparent;
 }
-
 #empty-area {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
-  background: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 75%;
+	background: transparent;
 }
-
 #empty-message {
-  font-size: 1.5em;
-  justify-self: center;
-  align-self: center;
-  color: #55555555;
-  background: transparent;
+	font-size: 1.5em;
+	justify-self: center;
+	align-self: center;
+	color: #55555555;
+	background: transparent;
+}
+/* DARK THEME */
+body[theme="dark"] #options-area {
+	background: #555555
+}
+#search {
+	position: fixed;
+	top: 3.4em;
+	height: 4em;
+	width: 100%;
+	background: rgb(170, 170, 170);
+	display: flex;
+	user-select: none;
+	justify-content: left;
+	align-content: center;
+}
+#search * {
+	margin: 0 1em;
+	height: 3.5em;
+	border-radius: 15px;
 }
 
-/* DARK THEME */
+#content-type{
+  position: absolute;
+  top: 0.35em;
+}
+#searchbar{
+  position: absolute;
+  left: 12em;
+  top: 0.2em;
+  font-size: 1em;
+  height: 2.3em;
+}
+#content-stats{
+  position: absolute;
+  left: 8em;
+  top: 0.35em;
 
-body[theme="dark"] #options-area {
-  background: #555555
+}
+#search select {
+	padding: 1rem;
+	font-size: 1em;
+	height: 3.3em;
+}
+#search input {
+	text-align: center;
+	font-size: 1.5em;
 }

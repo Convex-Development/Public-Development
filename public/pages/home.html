@@ -5,6 +5,7 @@
 	<title>
 		(<%=notifications.length%>) Convex
 	</title>
+
 	<script src="/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 	<script src="/scripts/master.js" defer></script>
@@ -19,7 +20,7 @@
     <main>
         <div id="welcome-area" class="card limit">
           <h2 class="title"><span>Welcome</span>, <%=username%></h2>
-          <input type="text" id="create-post-input" placeholder="How is your day going?">
+          <input type="text" id="create-post-input" placeholder="How's your day going?">
           <div class="double">
 			<div>
 				<div class="option"></div>

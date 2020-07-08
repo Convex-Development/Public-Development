@@ -7,39 +7,7 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body theme="<%=settings.mode%>">
-    <div id="nav-bar">
-      <img id="home-button" src="https://media.discordapp.net/attachments/651993623021355018/668673208739823656/unknown.png">
-      <div id="divider"></div>
-      <a id="profile" href="/profile/<%=token%>">Profile</a>
-      <div id="divider"></div>
-      <a id="community" href="/community">Community</a>
-      <div id="divider"></div>
-      <a id="chat" href="/chat">Chat</a>
-      <div id="divider"></div>
-      <a id="content" href="/content">Content</a>
-      <div id="divider"></div>
-      <input id="search-bar" type="text" placeholder="Search">
-      <img id="notification-bell" src="https://media.discordapp.net/attachments/651993623021355018/668679210642046976/unknown.png?width=300&height=300">
-      <a id="extra-options">|||</a>
-      
-    </div>
-    <div id="search-results"></div>
-    <div id="extra-options-area">
-      <div id="settings">
-        <p>Settings</p>
-      </div>
-      <div id="purchase">
-        <p>Pricing</p>
-      </div>
-      <div id="Logout">
-        <p>Logout</p>
-      </div>
-    </div>
-    <div id="notifications-area">
-      <div id="notification-flex-container">
-        <%=notifications%>
-      </div>
-    </div>
+    <%- include('../partials/header.html') %>
     <!-- panel -->
     <main>
       <div id="left-area">

@@ -1,3 +1,21 @@
+//Nav bar
+const menu = document.getElementById('expand')
+const sidebar = document.querySelector('aside')
+
+let toggle = false;
+
+menu.addEventListener('click', () => {
+	sidebar.style.left = !toggle ? 0 : 'calc(-15em - 2px)'
+	setTimeout(() => {
+		toggle = toggle ? false : true	
+	}, 100)
+})
+
+document.body.addEventListener('click', e => {
+	let inside = sidebar.contains(e.target)
+	if(!inside && toggle) menu.click()
+})
+
 //socketio
 var socket;
 socket = io();
@@ -77,6 +95,7 @@ $(document).click(function() {
   }
 
 });
+
 
 //socketio functions
 
