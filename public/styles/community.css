@@ -6,64 +6,6 @@ main {
   height: 90%;
 }
 
-/* SCREEN LEFT */
-
-#left-area {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  min-height: 38em;
-  width: 23vw;
-  background: transparent;
-}
-
-/* OPTIONS AREA */
-
-#options-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  box-shadow: 2px 0px 8px 0px rgba(168,168,168,1);
-  background: #B9B9B9;
-}
-
-#options-area > .option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 4em;
-  width: 100%;
-  font-size: 1em;
-  cursor: pointer;
-  background: transparent;
-}
-
-#options-area > #option:hover {
-  transform: scale(1.1)
-}
-
-#options-area > #divider {
-  height: .1px;
-  margin-top: .1vh;
-  margin-bottom: .1vh;
-  width: 90%;
-}
-
-/* SCREEN RIGHT */
-
-#right-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  min-height: 38em;
-  width: 80%;
-  margin-left: 23vw;
-  background: transparent;
-}
 
 /* COMMUNITY AREA */
 
@@ -110,14 +52,6 @@ main {
   justify-content: center;
   align-items: center;
   height: 75%;
-  background: transparent;
-}
-
-#empty-message {
-  font-size: 1.5em;
-  justify-self: center;
-  align-self: center;
-  color: #55555555;
   background: transparent;
 }
 

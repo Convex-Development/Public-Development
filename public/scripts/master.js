@@ -1,10 +1,9 @@
-//Nav bar
-const menu = document.getElementById('expand')
+const menu = document.getElementById('expand');
 const sidebar = document.querySelector('aside')
 
-let toggle = false;
+let toggle = false
 
-menu.addEventListener('click', () => {
+menu.addEventListener('click',()=>{
 	sidebar.style.left = !toggle ? 0 : 'calc(-15em - 2px)'
 	setTimeout(() => {
 		toggle = toggle ? false : true	
@@ -19,7 +18,7 @@ document.body.addEventListener('click', e => {
 //socketio
 var socket;
 socket = io();
-var notificationsRecieved = false;
+var notificationsRecieved = false
 
 let searchLimit = 15;
 

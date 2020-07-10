@@ -42,39 +42,37 @@ const socket = require('socket.io'),
 	io = socket(app.listen(3000));
 
 async function passUserToEjs(req, res, page){
-	// console.log('getting cookies:', get_cookies(req)['session']);
-	// if (get_cookies(req)['session']) {
-		//let token = get_cookies(req)['session'];
-		//let user = await db.getUserBy('token', token);
-		res.render(page, {user: 'user', notifications: {}, profile: {
-			friends: [],
-			followers: [],
-			following: []
-		}, username: 's', token:'ohno', chats: [], email: ''});
-	// }
+	if (get_cookies(req)['session']) {
+		let token = get_cookies(req)['session'];
+		let user = await db.getUserBy('token', token);
+		console.log('USER', user);
+		if (!user) res.render(page, db.newUserObject());
+		res.render(page, user);
+	}
+	else res.render(page, db.newUserObject());
 	// else res.redirect('/');
-	// res.render('pages/login');
 }
 
 
 // recieve objects, combine them
 app.get('/', async (req, res) => {
-	if (get_cookies(req)['session']) {
-		let token = get_cookies(req)['session'];
-		let user = await db.getUserBy('token', token).catch(console.log);
-		if (user){
-			let newToken = randID();
-			res.cookie("session", newToken, {
-				httpOnly: true, 
-				overwrite: true
-			});
-			db.swapUserToken(token, newToken);
-			user.token = newToken;
-			res.render('pages/home', user);
-		}
-		else res.render('pages/index', { theme: 'light' });
-	}
-	else res.render('pages/index', { theme: 'light' });
+	// if (get_cookies(req)['session']) {
+	// 	let token = get_cookies(req)['session'];
+	// 	let user = await db.getUserBy('token', token).catch(console.log);
+	// 	if (user){
+	// 		let newToken = randID();
+	// 		res.cookie("session", newToken, {
+	// 			httpOnly: true, 
+	// 			overwrite: true
+	// 		});
+	// 		db.swapUserToken(token, newToken);
+	// 		user.token = newToken;
+	// 		res.render('pages/home', user);
+	// 	}
+	// 	else res.render('pages/index', { theme: 'light' });
+	// }
+	// else res.render('pages/index', { theme: 'light' });
+	res.render('pages/index', { theme: 'light' });
 });
 
 app.get('/home', (req, res) => { passUserToEjs(req, res, 'pages/home'); });
@@ -85,11 +83,16 @@ app.get('/community', (req, res) => { passUserToEjs(req, res, 'pages/community')
 
 app.get('/login', (req, res) => { passUserToEjs(req, res, 'pages/login'); });
 
+app.get('/music', (req, res) => { passUserToEjs(req, res, 'pages/music'); });
+
 app.get('/content', (req, res) => { passUserToEjs(req, res, 'pages/content'); });
 
 app.get('/settings', (req, res) => { passUserToEjs(req, res, 'pages/settings'); });
 
 app.get('/chat', (req, res) => { passUserToEjs(req, res, 'pages/chat'); });
+
+app.get('/about', (req, res) => { passUserToEjs(req, res, 'pages/about'); });
+app.get('/admin', (req, res) => { passUserToEjs(req, res, 'pages/admin'); });
 app.get('/email/*', async (req, res) => {
 	try{
 		let parts = safety.decrypt(req.path.split('/').slice(2).join('/')).split('⇝');
@@ -131,48 +134,45 @@ app.get('/pricing', (req, res) => {
 	res.render('pages/pricing', { darkTheme: dt });
 });
 
-app.post('/register', async (req, res) => {
-	let data = req.body;
-	
-	if(!data.username || !data.email || !data.password) return res.send({error: 'Invalid registration details'});
-
-	if (await db.getUserBy('email', data.email) || await db.getUserBy('username', data.username)){
-		return res.send({error: 'user exists'});
-	}
-
-	let link = 'https://Chattr-Code-Optimization-1.chattr.repl.co/email/'
-	link += safety.encrypt(data.username + '⇝' + data.password + '⇝' + data.email);
-	
-	try {
-		await mailer.verification(data.email, link);
-	}
-	catch(e) {
-		return res.send({error: 'could not mail'});
-	}
-
-	res.send({ 
-		token: randID()
-	});
-})
-
 app.post('/login', async (req, res) => {
 	data = req.body;
-	if(!data) return res.send({error: 'Invalid login details'})
-	let password = await db.getUserPart('username', data.username, 'password').catch(console.log);
-	if (!password) {
-		password = await db.getUserPart('email', data.username, 'password').catch(console.log);
+	if(!data) return res.redirect('/login#Invalid-details');
+
+	if (data.type == 'signup'){
+		if(!data.username || !data.email || !data.password) return res.redirect('/login#Invalid-registration-details');
+
+		if (await db.getUserBy('email', data.email).catch(console.log) || await db.getUserBy('username', data.username).catch(console.log)){
+			return res.redirect('/login#User-exists');
+		}
+
+		let link = 'https://Public-Development.convex.repl.co/email/'
+		link += safety.encrypt(data.username + '⇝' + data.password + '⇝' + data.email);
+		
+		try { await mailer.verification(data.email, link); }
+		catch(e) { return res.redirect({error: '/login#Email-error'}); }
+
+		return res.redirect('/login#Email-sent');
 	}
-	
-	if (data.password == password) {
-		let token = randID();
-		await db.setUserToken(data.username, token);
-		res.cookie("session", token, {
-			httpOnly: true, 
-			overwrite: true
-		});
-		res.send({ token });	
+
+	else if (data.type == 'login'){
+		let password = await db.getUserPart('username', data.username, 'password').catch(console.log);
+		if (!password) {
+			password = await db.getUserPart('email', data.username, 'password').catch(console.log);
+		}
+		
+		if (data.password == password) {
+			let token = randID();
+			await db.setUserToken(data.username, token).catch(console.log);
+			res.cookie("session", token, {
+				httpOnly: true, 
+				overwrite: true
+			});
+			res.redirect('/home');	
+		}
+		else{
+			res.redirect('/login#Invalid-login-details');
+		}
 	}
-	else res.send({error: 'Invalid login details'});
 });
 
 //other functions

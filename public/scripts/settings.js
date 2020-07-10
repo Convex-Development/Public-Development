@@ -466,9 +466,6 @@ function renderSecurityLogin() {
       <input id="TFA" type="checkbox" ${userInfo.tfa}>
     </div>
     <p id="description">Enable this to recieve a confirmation email when someone attempts to sign into your account.</p>
-    <h2 id="sub-title">Recently logged in devices</h2>
-    <div id="empty-area">
-      <div id="empty-message">Feature coming soon!</div>
     </div>
   `);
   
@@ -798,10 +795,10 @@ function renderTheme() {
 
   $('#content-container').append(`
     <div class="checkbox-container">
-      <h2 id="sub-title">Dark Theme</h2>
+      <h2 id="sub-title">Dark Mode</h2>
       <input id="DarkTheme" type="checkbox" ${userInfo.dt}>
     </div>
-    <p id="description">To bright? Turn this on to decrease brightness.</p>
+    <p id="description">Too bright? Turn this on to decrease brightness.</p>
   `);
 
   document.getElementById('DarkTheme').addEventListener('click', function() {

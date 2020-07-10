@@ -1,0 +1,48 @@
+
+.player{
+position: fixed;
+ background-color:rgb(196, 196, 196);
+ width: 98.5%;
+ margin-left:300px;
+ padding:5px;
+ box-sizing:border-box;
+ Bottom: 1%;
+ right: 1%;
+ height:10%;
+ color: white;
+}
+
+input[type="image"]
+{
+ float:left;
+ height:20px;
+ margin-left:2px;
+ margin-right:5px;
+ margin-top:2px;
+}
+
+#play_button{
+  position: absolute;
+  left: 1%;
+  height: 70%;
+}
+#pause_button{
+  position: absolute;
+  left: 7%;
+  height: 70%;
+}
+#stop_button{
+  position: absolute;
+  height: 70%;
+  left: 13%;
+}
+#vol_img{
+  position: absolute;
+  height: 70%;
+  left: 29.3%;
+}
+#change_vol{
+  position: absolute;
+  left: 34%;
+  bottom: 35%;
+}

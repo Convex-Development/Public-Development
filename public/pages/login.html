@@ -4,34 +4,37 @@
 	<%- include('../partials/seo.html') %>
 	<title>Convex</title>
 	<link href="/styles/login.css" rel="stylesheet" type="text/css" />
-	<!-- <script src="/socket.io/socket.io.js"></script> -->
-	<!-- <script src="/scripts/gottem.js" defer></script> -->
-	<!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
-  	<script src="/scripts/login.js" defer></script>
+  <script src="/scripts/login.js" defer></script>
 </head>
 <body>
 	<div class="app">
     <main class="fadeIn">
 <!-- Add logo in next line -->
 		<img id="home-button" src="">
-		<div id="signupbox" class="form">
-			<input placeholder="Username" autocomplete="off"/>
-			<input placeholder="Email" type="email" autocomplete="off"/>
+		<form id="signupbox" method='POST'>
+			<input name="type" value="signup" style="display: none">
+			<input name="username" placeholder="Username" autocomplete="off"/>
+			<input name="email" placeholder="Email" type="email" autocomplete="off"/>
 			<div class="double">
-				<input autocomplete="off" type="password" placeholder="Password"/>
-				<input onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" type="password" placeholder="Confirm Password"/>
+				<input name="password" autocomplete="off" type="password" placeholder="Password"/>
+				<input name="confirm" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" autocomplete="off" type="password" placeholder="Confirm Password"/>
 			</div>
-		</div>
-		<div id="loginbox" class="form" style="display: none">
+			<div class="row">
+				<input type="checkbox" id="agree"><label>I have read and agreed with the <a href="/policy" target="_blank">Terms of Service</a></label>
+			</div>
+			<button disabled>Register</button>
+		</form>
+
+		<form id="loginbox" style="display: none" method="POST">
+			<input name="type" value="login" style="display: none">
 			<div class="double">
-			<input placeholder="Username or Email" autocomplete="off"/>
-			<input autocomplete="off" type="password" placeholder="Password"/>
+			<input name="username" placeholder="Username or Email" autocomplete="off"/>
+			<input name="password" autocomplete="off" type="password" placeholder="Password"/>
 			</div>
-		</div>
-		<button>Register</button>
-		<a id="switch" class="text">Already have an account?<br>Login</a>
-    <input type="checkbox" id="1" name="1" value="1">
-    <label for="1"> I have read the terms of service and understand and agree with them</label><br>
+			<button>Login</button>
+		</form>
+
+		<a id="switch" class="text" onclick="switchForm()">Already have an account?<br>Login</a>
 	</main>
 	</div>
 </body>

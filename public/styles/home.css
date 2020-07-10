@@ -8,6 +8,7 @@
 
 .card {
 	width: calc(100% - 0.5em);
+ margin-top: 50px;
 	margin: 0.5em;
 	padding: 1em;
 	display: inline-flex;
@@ -61,6 +62,7 @@
 #submit-post{
 	border: 2px solid grey;
 	background: grey;
+  margin-top: 50px;
 	color: #f9f9f9;
 	padding: 0.2em 0.5em;
 	font-size: 1.1em;

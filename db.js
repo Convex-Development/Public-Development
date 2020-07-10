@@ -28,7 +28,6 @@ var users = db.collection('users');
 var chats = db.collection('chats');
 
 const dbSQL = new FireSQL(db);
-const userSQL = new FireSQL(users);
 
 
 /**
@@ -139,7 +138,6 @@ async function getUserPartsById(id, parts){
 // I'm trying out the function below this one
 async function setUserToken(username, token){
 	let doc = await getUserBy('username', username);
-	console.log(username, doc);
 	await users.doc(doc.id).update({token: token});
 	return true;
 }
@@ -333,6 +331,7 @@ async function getChats(token, chatId, start, num){
 module.exports = {
 	admin, 
 	db,
+	newUserObject,
 	getUserById,
 	getUserBy,
 	getUserPart,

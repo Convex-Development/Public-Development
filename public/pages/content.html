@@ -15,23 +15,51 @@
 	</script>
 </head>
 <body theme="<%=settings.mode%>">
-	<%- include('../partials/header.html') %>
+		<link rel="shortcut icon" href="https://media.discordapp.net/attachments/651993623021355018/660395403908481064/cattrdarkgrey.png" type="image/png" />
+	<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet" />
+	<link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	<title>Convex</title>
+    <link href="master.css" rel="stylesheet" type="text/css"/>
+	<script src="scripts/master.js" defer></script>
+  <header>
+		<button id="expand"><i class="fas fa-bars"></i></button>
+		<input placeholder="Search Convex..." autocomplete="off"/>
+		<img id="logo" src="https://cdn.discordapp.com/attachments/728693902047182990/730471425353187338/lens.png" onclick='window.location.href="/"' />
+		  <select id='content-type'>
+			  <option>Games</option>
+			  <option>Music</option>
+        <option>Videos</option>
+        <option>Posts</option>
+		  </select>
+  	  <select id='content-stats'>
+			  <option>Most Popular</option>
+			  <option>Trending</option>
+			  <option>New</option>
+        <option>Most Original</option>
+		  </select>
+	</header>
+	<aside>
+   <div id="#nav-bar">
+			<div id="notification-wrapper">
+				<h1>Convex</h1>
+				<img id="notification-bell" src="https://media.discordapp.net/attachments/651993623021355018/668679210642046976/unknown.png?width=300&height=300" title="notifications"/>
+			</div>
+			<nav>
+				<a href="/community">Community</a>
+				<a href="/content">Content</a>
+				<a href="/chat">Chat</a>
+				<a href="/settings">Settings</a>
+			</nav>
+		</div>
+		<div>
+			<button id="logout" onclick='window.location.href="/logout"'>Logout</button>
+			<a>Discord</a>
+			<a>Join us</a>
+			<a>Blog</a>
+		</div>
 
-	<div id='search'>
-		<select id='content-type'>
-			<option>Games</option>
-			<option>Music</option>
-      <option>Videos</option>
-      <option>Posts</option>
-		</select>
-  	<select id='content-stats'>
-			<option>Most Popular</option>
-			<option>Trending</option>
-			<option>New</option>
-      <option>Most Original</option>
-		</select>
-		<input type='text' id = "searchbar" placeholder='search anything'>
-	</div>
+	</aside>
 
 	</div>
     <!-- panel -->

@@ -13,7 +13,7 @@ main {
 	box-shadow: 0 0 0.5em silver;
 	overflow: hidden;
 }
-main .form {
+main form {
 	display: inherit;
 	flex-direction: inherit;
 }
@@ -24,7 +24,7 @@ main img {
 	pointer-events: none;
 	user-select: none;
 }
-main .form input {
+main form input {
 	outline: none;
 	border: none;
 	background: gainsboro;
@@ -35,15 +35,15 @@ main .form input {
 	transition: color 0.3s ease,
 				border-bottom 0.3s ease;
 }
-main .form input:hover {
+main form input:hover {
 	color: grey;
 	border-bottom: 0.15em solid grey;
 }
-main .form input:focus {
+main form input:focus {
 	color: #555;
 	border-bottom: 0.15em solid var(--dark-primary);
 }
-main .form input, 
+main form input, 
 main button {
 	margin: 0.5em;
 	font-size: 1.1em;
@@ -60,6 +60,10 @@ main button {
 }
 main button:hover{
 	filter: brightness(0.9);
+}
+main button[disabled] {
+	background-color: grey;
+	cursor: not-allowed;
 }
 main a.text,
 main a.text:visited {

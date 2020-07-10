@@ -24,8 +24,10 @@ html, body {
 	box-sizing: inherit;
 }
 
+
 /* Footer */
-footer {
+footer{
+	text-decoration: none;
 	background-color: var(--background);
 	padding: 0.5em;
 	width: 100%;
@@ -58,73 +60,7 @@ footer div:hover {
 	box-shadow: 0 0 0.5em var(--light-primary);
 }
 
-#divider {
-	height: 100%;
-	width: 1px;
-	margin: 0 1vh 0 1vh;
-	background: #555;
-	box-shadow: 0px 0px 1px .1px #555;
-}
 
-#nav-bar {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	height: 3em;
-	z-index: 10;
-	background: var(--navbar-background);
-	box-shadow: 0 0 0.5em silver;
-	margin-bottom: 1em;
-}
-
-#nav-bar .header-right {
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	align-items: center;
-}
-
-#nav-bar a{
-	width: 8vw;
-	height: 100%;
-	margin: 0;
-	cursor: pointer;
-	text-decoration: none;
-	color: #555;
-	background: transparent;
-	transition: transform 0.2s ease, color 0.2s ease;
-}
-#nav-bar a:hover {
-  transform: scale(1.05);
-	color: #444;
-}
-#nav-bar > #extra-options {
-  position: fixed;
-	width: 2em;
-  right: 3em;
-	font-size: 1.5em;
-	transform: rotate(90deg);
-}
-
-#nav-bar img {
-  height: 100%;
-  margin: 0 2% 0 2%;
-  cursor: pointer;
-  background: transparent;
-}
-
-#nav-bar #divider {
-	/* position: relative; */
-	height: 70%;
-	width: 1px;
-	background: black;
-}
-#notification-bell {
-  height: 2.5em;
-	width: 2.5em;
-	object-fit: contain;
-}
 
 #search-results {
 	position: absolute;
@@ -471,7 +407,7 @@ header {
 	left: 0;
 	right: 0;
 	padding: 0.5em 1em;
-	background: #fff;
+	background: #d3d3d3;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
@@ -479,7 +415,7 @@ header {
 }
 header img {
 	height: 3em;
-	width: 6.5em;
+	width: 3em;
 	user-select: none;
 }
 header input {
@@ -491,7 +427,7 @@ header input {
 	flex: 0 0 calc(100% / 3);
 	color: grey;
 	transition: border-color 0.3s ease,
-				color 0.3s ease;
+	color 0.3s ease;
 }
 header input:focus {
 	border-color: var(--light-primary);
@@ -531,6 +467,7 @@ aside button {
 	outline: none;
 	padding: 0.5em 0;
 	font-size: 100%;
+	color: black;
 }
 aside nav a {
 	border-left: 0.3em solid transparent;
