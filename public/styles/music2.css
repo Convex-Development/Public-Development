@@ -1,6 +1,6 @@
 
 .player{
-position: fixed;
+position: sticky;
  background-color:rgb(196, 196, 196);
  width: 98.5%;
  margin-left:300px;

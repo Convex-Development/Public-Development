@@ -22,6 +22,9 @@ h1 {
 /* Hide the images by default */
 .slide {
   display: none;
+  width: 100%;
+  margin-right: 0em;
+  margin-left:0em;
 }
 
 /* Next & previous buttons */
@@ -44,6 +47,9 @@ h1 {
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+.prev{
+  left: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
