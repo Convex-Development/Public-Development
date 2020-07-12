@@ -1,9 +1,18 @@
 .container {
-	width: 80%;
+	width: 95%;
+  position: sticky;
+  height: 10%;
 	background: #ddd;
-	margin: calc(50vh - 30px) auto;
+	margin: calc(43vh - 0px) auto;
 	text-align: center;
 	padding-bottom: 10px;
+  justify-content: left;
+  align-content: center;
+}
+.container input{
+  height: 95%;
+  outline: none;
+
 }
 .progress {
 	width: 1px;
@@ -38,15 +47,38 @@ Play Pause Button .togglePlay {
 	border-left-width: 19px;
 	border-left-color: rgba(255,255,255,0.9);
 }
-:hover {
-	transform: scale(1.05);
-}
-active{
+
+// :hover {
+//	transform: scale(1.05);
+//}
+/* active{
 	&:after {
 		width: 21px;
 		height: 26px;
 		margin-left: 0;
 		border-width:0 7px;
 		border-color: rgba(255,255,255,0.9)
-  }
-
+  } */
+#cards-container {
+	margin-top: 8em;
+}
+.card {
+	width: 20em;
+	height: 12em;
+	border: 3px solid black;
+	transition-duration: 0.4s;
+	display: flex;
+	flex-direction: row;
+}
+.card:hover {
+	transform: rotate3d(1, 1, 0, 15deg);
+}
+.card .card-pic {
+	width: 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card .right {
+	text-align: center;
+}

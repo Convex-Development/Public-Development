@@ -24,44 +24,6 @@ html, body {
 	box-sizing: inherit;
 }
 
-
-/* Footer */
-footer{
-	text-decoration: none;
-	background-color: var(--background);
-	padding: 0.5em;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	box-shadow: 0 0 0.5em silver;
-}
-footer div {
-	margin: 0.5em;
-	padding: 0.5em;
-	width: 2.5em;
-	height: 2.5em;
-	font-size: 1.1em;
-	background: #fff;
-	border-radius: 50%;
-	transition: box-shadow 0.3s ease;
-}
-footer div a {
-	color: #555;
-	text-decoration: none;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
-footer div:hover {
-	box-shadow: 0 0 0.5em var(--light-primary);
-}
-
-
-
 #search-results {
 	position: absolute;
 	top: -60vh;

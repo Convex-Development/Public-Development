@@ -1,56 +1,29 @@
-<div class="container">
-  <div class="progress" id="progress"></div>
-  <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
-  <button class="togglePlay" onClick="togglePlay()">Play/Pause</button>
-</div><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    
 		<%- include('../partials/seo.html') %>
-    <script src="/scripts/music.js"></script>
+    
+
     <!--<script src="/scripts/master.js"></script> -->
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
   </head>
   <body>
   	<%- include('../partials/header.html') %>
+
+		<div id='cards-container'>
+		</div>
 		
-  <div class="audio-player">
-    <div id="play-btn"></div>
-    <div class="audio-wrapper" id="player-container" href="javascript:;">
-      <div class="container">
-  <div class="progress" id="progress"></div>
- 
-    </div>
+		<div class="container">
+<div class="progress" id="progress"></div>
+			<audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
+				<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay">
 
+        <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class="">
+		</div>
 
-
-  <div class='player'>
-    <h3 id="SongName">Song Name</h3>
-  <audio id="music_player">
-    <source src="Songs/ Distrion & Alex Skrindo - Lightning [NCS Release].mp3" id='song'/>
-  </audio>
-  <input type="image" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="play_aud()" id="play_button">
-  <input  type="image" src="https://media.discordapp.net/attachments/728653704168996866/730913386686054521/RawAwqMCgAr1GrwHAoMKgAvQavQYAgwqDCtBr9BoADCoMKtBr0GsAMKgwqECvQa8BwKDCoAK9Br0GwKACgwr0GvQagK4tz0fn3K8.png?width=603&height=452" onclick="pause_aud()" id="pause_button">
-  <input type="image" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop_aud()" id="stop_button">
-  <img src="https://media.discordapp.net/attachments/728653704168996866/730914313744810105/wNDDtgwpSnp0gAAAABJRU5ErkJggg.png?width=603&height=452" id="vol_img">
-  <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
-</div>
-
-
-
-
-    <div class="player-controls scrubber">
-
-      <span id="seekObjContainer">
-			  <progress id="seekObj" value="0" max="1"></progress>
-			</span>
-      <br>
-      <small style="float: left; position: relative; left: 15px;" class="start-time"></small>
-      <small style="float: right; position: relative; right: 20px;" class="end-time"></small>
-
-    </div>
-    <div class="album-image" style="background-image: url('https://artwork-cdn.7static.com/static/img/sleeveart/00/051/614/0005161476_350.jpg')"></div>
-  </div>
+		<script src="/scripts/music2.js"></script>
+		<script src="/scripts/music.js"></script>
+		
   </body>
 </html>

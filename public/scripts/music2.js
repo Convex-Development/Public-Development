@@ -1,3 +1,31 @@
+class Song{
+	constructor(file, image, title, artist, description){
+		this.file = file;
+		this.image = image;
+		this.title = title; 
+		this.artist = artist;
+		this.description = description;
+		this.playing = false;
+		this.element = this.makeElement();
+	}
+	makeElement(){
+		let card = document.createElement('div');
+		card.classList.add('card');
+		card.innerHTML = `
+			<div class='card-pic' style="background-image: url('${this.image}')"></div>
+			<div class='right'>
+				<b><u><span class='song-title'>${this.title}</span></u></b>
+				<p>Artist: ${this.artist}</p>
+				<p>${this.description}</p>
+			</div>
+		`;
+		return card;
+	}
+}
+
+
+
+
 function calculateTotalValue(length) {
   var minutes = Math.floor(length / 60),
     seconds_int = length - minutes * 60,
@@ -86,4 +114,4 @@ function initPlayers(num) {
   }
 }
 
-initPlayers(jQuery('#player-container').length);
+// initPlayers($('#player-container').length);
