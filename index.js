@@ -75,7 +75,9 @@ app.get('/', async (req, res) => {
 	res.render('pages/index', { theme: 'light' });
 });
 
-app.get('/home', (req, res) => { passUserToEjs(req, res, 'pages/home'); });
+app.get('/home', (req, res) => { 
+   passUserToEjs(req, res, 'pages/home'); 
+  });
 
 app.get('/profile', (req, res) => { passUserToEjs(req, res, 'pages/profile'); }); 
 

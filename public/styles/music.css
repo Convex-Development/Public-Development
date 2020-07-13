@@ -12,11 +12,33 @@
 .container input{
   height: 95%;
   outline: none;
-
+}
+.containerfloat {
+  border-radius: 20px;
+	width: 100%;
+  position: fixed;
+  height: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	background: #ddd;
+	text-align: center;
+	padding-bottom: 2px;
+  justify-content: left;
+  align-content: center;
+}
+.containerfloat input{
+  height: 95%;
+  outline: none;
 }
 .progress {
-	width: 1px;
-	height: 3px;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 5px;
+  /* top:460px; */
 	background: #006B5A;
 	transition: width .1s linear;
 }
@@ -71,7 +93,7 @@ Play Pause Button .togglePlay {
 	flex-direction: row;
 }
 .card:hover {
-	transform: rotate3d(1, 1, 0, 15deg);
+	transform: rotate3d(10, 10, 0, 20deg);
 }
 .card .card-pic {
 	width: 50%;
