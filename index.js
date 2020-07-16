@@ -131,10 +131,7 @@ app.get('/policy', (req, res) => {
 	res.render('pages/policy', { darkTheme: getDarkTheme() });
 });
 
-app.get('/pricing', (req, res) => {
-	let dt = get_cookies(req)['dt'] || getDarkTheme(); //dark theme
-	res.render('pages/pricing', { darkTheme: dt });
-});
+
 
 app.post('/login', async (req, res) => {
 	data = req.body;

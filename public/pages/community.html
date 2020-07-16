@@ -10,37 +10,7 @@
 	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-	  <header>
-		<button id="expand"><i class="fas fa-bars"></i></button>
-		<input placeholder="Search Convex..." autocomplete="off"/>
-		<img id="logo" src="https://cdn.discordapp.com/attachments/728693902047182990/730471425353187338/lens.png" onclick='window.location.href="/"' />
-		  <select id='content-type'>
-			  <option>Friends</option>
-			  <option>Blocked</option>
-        <option>Popular</option>
-		  </select>
-	</header>
-	<aside>
-   <div id="#nav-bar">
-			<div id="notification-wrapper">
-				<h1>Convex</h1>
-				<img id="notification-bell" src="https://media.discordapp.net/attachments/651993623021355018/668679210642046976/unknown.png?width=300&height=300" title="notifications"/>
-			</div>
-			<nav>
-				<a href="/community">Community</a>
-				<a href="/content">Content</a>
-				<a href="/chat">Chat</a>
-				<a href="/settings">Settings</a>
-			</nav>
-		</div>
-		<div>
-			<button id="logout" onclick='window.location.href="/logout"'>Logout</button>
-			<a>Discord</a>
-			<a>Join us</a>
-			<a>Blog</a>
-		</div>
-
-	</aside>
+	  <%- include('../partials/header.html') %>
 <!-- We used to have an administrator panel -->
     <main>
       </div>

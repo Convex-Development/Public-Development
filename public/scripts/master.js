@@ -315,4 +315,3 @@ socket.on('catch-profile-pic', function(info) {
   } else document.getElementById(info.userElementID).children[0].children[0].src = info.profile_pic
 })
 
-setProfilePics('notification-flex-container', document.getElementById('notification-flex-container').childElementCount)

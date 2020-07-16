@@ -83,24 +83,45 @@ Play Pause Button .togglePlay {
   } */
 #cards-container {
 	margin-top: 8em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
+
+
 .card {
-	width: 20em;
-	height: 12em;
-	border: 3px solid black;
+	margin: 2em 2em;
+	padding: 0;
+	width: 15vw;
+	background-size: cover;
+	border-radius: 10px;
+	/* box-shadow: 0 0 1em rgb(0, 174, 255); */
+ }
+
+.card .img-container {
+	width: 100%;
+	height: 12vw;
+	background-size: cover;
+	background-position: center;
+	border-radius: 1.5vw;
+	margin: 0;
+	padding: 0;   
 	transition-duration: 0.4s;
+}
+.card:hover .img-container:hover {
+	transform: scale(1.05);
+}
+.card .bottom {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
 }
-.card:hover {
-	transform: rotate3d(10, 10, 0, 20deg);
+.card .bottom p {
+	font-size: 1em;
 }
-.card .card-pic {
-	width: 50%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.card .right {
-	text-align: center;
+.card .bottom .song-title {
+	color: black;
+	font-weight: bolder;
 }

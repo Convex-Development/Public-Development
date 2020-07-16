@@ -566,12 +566,18 @@ function renderNotifications() {
   $('#content-container').append(`
     <div class="checkbox-container">
       <h2 id="sub-title">External Notifications</h2>
-      <input id="EN_notifications" type="checkbox" ${userInfo.en}>
+      <label class="switch">
+          <input id="EN_notifications" type="checkbox" ${userInfo.en}>
+          <span class="slider round"></span>
+        </label>
     </div>
     <p id="description">Allow us to send you a notification every time a friend messages, follows, or sends a friend request to you.</p>
     <div class="checkbox-container">
       <h2 id="sub-title">Newsletter Notifications</h2>
-      <input id="NN_notifications" type="checkbox" ${userInfo.nn}>
+      <label class="switch">
+          <input id="NN_notifications" type="checkbox" ${userInfo.nn}>
+          <span class="slider round"></span>
+        </label>
     </div>
     <p id="description">Allow us to send you updates on how Chattr has changed or improved.</p>
   `);
@@ -585,17 +591,26 @@ function renderNotifications() {
     <div id="content-container">
       <div class="checkbox-container">
         <h2 id="sub-title">Posts</h2>
-        <input id="post_notifications" type="checkbox" ${userInfo.post_notifications}>
+        <label class="switch">
+          <input id="post_notifications" type="checkbox" ${userInfo.post_notifications}>
+          <span class="slider round"></span>
+        </label>
       </div>
       <p id="description">Receive a notification every time your friends create a new post.</p>
       <div class="checkbox-container">
         <h2 id="sub-title">Chats</h2>
-        <input id="chat_notifications" type="checkbox" ${userInfo.chats}>
+        <label class="switch">
+          <input id="chat_notifications" type="checkbox" ${userInfo.chats}>
+          <span class="slider round"></span>
+        </label>
       </div>
       <p id="description">Receive a notification every time your friend sends you a message.</p>
       <div class="checkbox-container">
         <h2 id="sub-title">Updates</h2>
-        <input id="update_notifications" type="checkbox" ${userInfo.update_notifications}>
+        <label class="switch">
+          <input id="update_notifications" type="checkbox" ${userInfo.update_notifications}>
+          <span class="slider round"></span>
+        </label>
       </div>
       <p id="description">Receive a notification when a game that you have followed receives updates.</p>
     </div>
@@ -796,7 +811,10 @@ function renderTheme() {
   $('#content-container').append(`
     <div class="checkbox-container">
       <h2 id="sub-title">Dark Mode</h2>
-      <input id="DarkTheme" type="checkbox" ${userInfo.dt}>
+      <label class="switch">
+        <input id="DarkTheme" type="checkbox" ${userInfo.dt}>
+        <span class="slider round"></span>
+      </label>
     </div>
     <p id="description">Too bright? Turn this on to decrease brightness.</p>
   `);

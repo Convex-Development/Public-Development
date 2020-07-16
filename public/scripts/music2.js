@@ -1,28 +1,23 @@
 class Song{
-	constructor(file, image, title, artist, description){
-		this.file = file;
-		this.image = image;
-		this.title = title; 
-		this.artist = artist;
-		this.description = description;
-		this.playing = false;
-		this.element = this.makeElement();
-	}
-	makeElement(){
-		let card = document.createElement('div');
-		card.classList.add('card');
-		card.innerHTML = `
-			<div class='card-pic' style="background-image: url('${this.image}')"></div>
-			<div class='right'>
-				<b><u><span class='song-title'>${this.title}</span></u></b>
-				<p>Artist: ${this.artist}</p>
-				<p>${this.description}</p>
-			</div>
-		`;
-		return card;
-	}
+	  constructor(musicFile, image, title, artist){
+			this.file = musicFile;
+			this.image = image;
+			this.title = title; 
+			this.artist = artist;
+			this.element = this.makeElement();
+		}
+	  makeElement(){
+			let card = document.createElement('div');
+			card.classList.add('card');
+			card.innerHTML = `
+      <div class='img-container' style="background-image: url('${this.image}')"></div>
+      <div class='bottom'>
+				<p class='song-title'>${this.title}</p><p> by ${this.artist}</p>
+	    </div>
+	    `;
+	    return card;
+		}
 }
-
 
 
 
