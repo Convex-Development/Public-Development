@@ -1,3 +1,10 @@
+.specialtyImage {
+  transform: translateX(-10px);
+  transform:translateY(-5px);
+}
+.specialtyBar {
+  background: transparent;
+}
 .round {
   border-radius: 30px;
   border-color: black;
