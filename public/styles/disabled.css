@@ -77,3 +77,86 @@ main {
 #Logout:hover {
   background: rgba(255, 0, 0, 0.404);
 }
+body[theme="dark"] {
+  background: rgb(54, 54, 54);
+  transition: 1s;
+}
+
+body[theme="dark"] * {
+  color: #bbbbbb !important;
+}
+
+body[theme="dark"] > #nav-bar {
+  background: rgb(77, 76, 76);
+  box-shadow: 0px 2px 5px 1px transparent;
+  transition: 1s;
+}
+
+body[theme="dark"] > #background-styles > #slanted-div-a {
+  transition: 1s;
+  background:  #324c6191;
+}
+
+body[theme="dark"] header input:focus {
+  transition: 0.5s;
+	border-color: var(--light-primary);
+}
+
+body[theme="dark"] #search-bar {
+  transition: 1s;
+  border: 1.1px solid rgb(179, 179, 179);
+}
+
+body[theme="dark"] #divider {
+  transition: 1s;
+  background: transparent;
+  box-shadow: transparent !important;
+}
+
+body[theme="dark"] #home-button, body[theme="dark"] 
+#notification-bell {
+  transition: 1s;
+  filter: invert(1);
+}
+
+body[theme="dark"] #notifications-area {
+  transition: 1s;
+  background: rgb(77, 76, 76);
+  box-shadow: 0px 2px 5px 1px var(--light-primary);
+}
+
+body[theme="dark"] footer {
+  transition: 1s;
+  background: rgb(77, 76, 76);
+}
+
+body[theme="dark"] header {
+  transition: 1s;
+  background: rgb(77, 76, 76);
+}
+
+body[theme="dark"] #extra-options-area {
+  background: rgb(77, 76, 76);
+  transition: 1s;
+}
+
+body[theme="dark"] #search-results {
+  background: rgb(77, 76, 76);
+  transition: 1s;
+}
+
+body[theme="dark"] ullia.fa {
+  color: rgb(0, 0, 0) !important;
+  transition: 1s;
+}
+
+body[theme="dark"] .dorito{
+  background:rgb(66, 64, 64);
+}
+
+body[theme="dark"] .round {
+  background: black;
+  border-radius: 30px;
+  border-color: rgb(255, 255, 255);
+  border-width: 3px;
+}
