@@ -21,7 +21,6 @@
 	font-family: Azonix;
 	src: url("../Azonix.woff");
 }
-
 html, body {
 	box-sizing: border-box;
 	width: 100%;
@@ -328,12 +327,11 @@ body[theme="dark"] {
 
 body[theme="dark"] * {
   color: #bbbbbb !important;
-  transition: 1s;
 }
 
 body[theme="dark"] > #nav-bar {
   background: rgb(77, 76, 76);
-  box-shadow: 0px 2px 5px 1px var(--light-primary);
+  box-shadow: 0px 2px 5px 1px transparent;
   transition: 1s;
 }
 
@@ -349,8 +347,8 @@ body[theme="dark"] #search-bar {
 
 body[theme="dark"] #divider {
   transition: 1s;
-  background: var(--light-primary) !important;
-  box-shadow: 0px 2px 5px 1px var(--light-primary) !important;
+  background: transparent;
+  box-shadow: transparent !important;
 }
 
 body[theme="dark"] #home-button, body[theme="dark"] 
