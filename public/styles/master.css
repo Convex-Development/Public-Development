@@ -383,10 +383,13 @@ body[theme="dark"] #search-results {
   transition: 1s;
 }
 
-
 body[theme="dark"] ullia.fa {
   color: rgb(0, 0, 0) !important;
   transition: 1s;
+}
+
+body[theme="dark"] .dorito{
+  background:rgb(66, 64, 64);
 }
 
 body[theme="dark"] .round {
