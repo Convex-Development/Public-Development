@@ -340,6 +340,11 @@ body[theme="dark"] > #background-styles > #slanted-div-a {
   background:  #324c6191;
 }
 
+body[theme="dark"] header input:focus {
+  transition: 0.5s;
+	border-color: var(--light-primary);
+}
+
 body[theme="dark"] #search-bar {
   transition: 1s;
   border: 1.1px solid rgb(179, 179, 179);
@@ -479,15 +484,15 @@ aside nav a:hover {
 	border-left: 0.3em solid var(--light-primary);
 }
 #logout {
-	margin: 0.5em 0;
-	transition: background 0.3s ease;
+	transition: 0.5s;
 	border: 2px solid red;
 	background: red;
 	width: 100%;
-	border-radius: var(--radius);
+	border-radius: 10px;
 	color: #fff;
 }
 #logout:hover {
+  border-radius: 15px;
 	background: rgb(200, 0, 0);
 }
 aside #notification-wrapper {

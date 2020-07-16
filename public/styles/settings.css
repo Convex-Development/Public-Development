@@ -9,6 +9,7 @@ main {
 /* SCREEN LEFT */
 
 #left-area {
+  border-radius: 10px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,7 @@ main {
 /* OPTIONS AREA */
 
 #options-area {
+  border-radius: 0px 30px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
