@@ -458,12 +458,13 @@ aside {
 	background: #fff;
 	display: flex;
 	flex-direction: column;	
-	justify-content: space-between;
+	justify-content: left;
 	transition: left 0.3s ease;
 }
 aside nav {
 	display: flex;
 	flex-direction: column;	
+  justify-content: left;
 }
 aside a,
 aside button {
@@ -475,13 +476,26 @@ aside button {
 	color: black;
 }
 aside nav a {
-	border-left: 0.3em solid transparent;
-	transition: border-left 0.3s ease,
-				padding-left 0.3s ease;
+  transform: translateX(-15px);
+	border-radius: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  height: 4em;
+  width: 100%;
+  font-size: 1em;
+  overflow: visible;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(top, transparent 50%, black 50%);
+  background-position: 0% 0%;
+  background-size: 210%;
+  -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out;
 }
 aside nav a:hover {
-	padding-left: 1em;
-	border-left: 0.3em solid var(--light-primary);
+	color: white;
+  background-position: 0 100%;
 }
 #logout {
 	transition: 0.5s;
