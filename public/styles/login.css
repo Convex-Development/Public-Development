@@ -1,3 +1,4 @@
+
 .row{
   transform: translateX(70px);
 }
@@ -59,10 +60,12 @@ main button {
 	outline: none;
 	color: #fff;
 	cursor: pointer;
-	transition: filter 0.3s ease;
+  transition: 700ms;
 }
 main button:hover{
+  transition: 700ms;
 	filter: brightness(0.9);
+  border-radius: 30px;
 }
 main button[disabled] {
 	background-color: grey;
@@ -248,7 +251,7 @@ body[theme="dark"] .round {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgb(0, 0, 0);
 }
 
 input:focus + .slider {
