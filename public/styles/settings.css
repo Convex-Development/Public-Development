@@ -47,8 +47,8 @@ main {
   background-image: -webkit-linear-gradient(top, transparent 50%, black 50%);
   background-position: 0% 0%;
   background-size: 210%;
-  -webkit-transition: background 0.7s ease-in-out, color 0.7s ease-in-out;
-  transition: background 0.7s ease-in-out, color 0.7s ease-in-out;
+  -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .option:hover {

@@ -9,6 +9,7 @@ const agree = document.getElementById('agree');
 
 agree.onchange = function(){
 	if(this.checked) submit[0].disabled = false;
+  if(!this.checked) submit[0].disabled = true;
 }
 
 window.addEventListener('keyup', e => {
