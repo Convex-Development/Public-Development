@@ -245,11 +245,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 8em;
-  height: 2.5em;
+  width: 90px;
+  height: 120px;
   border-radius: 4px;
   cursor: pointer;
-  background: #B9B9B9;
+  background: rgb(13, 218, 132);
 }
 
 [contentEditable=true]:empty:not(:focus):before {

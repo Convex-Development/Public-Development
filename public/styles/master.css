@@ -487,7 +487,7 @@ aside nav a {
   font-size: 1em;
   overflow: visible;
   cursor: pointer;
-  background-image: -webkit-linear-gradient(top, transparent 50%, black 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgb(0, 0, 0) 50%);
   background-position: 0% 0%;
   background-size: 210%;
   -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out;
@@ -501,7 +501,7 @@ aside nav a:hover {
 	transition: 0.5s;
 	border: 2px solid red;
 	background: red;
-	width: 100%;
+	width: 87%;
 	border-radius: 10px;
 	color: #fff;
 }

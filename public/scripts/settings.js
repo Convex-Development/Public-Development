@@ -1,7 +1,6 @@
-//on enter
 var username = "";
 var infoArray = [];
-var userPhoto = 'https://storage.googleapis.com/chattr-userbase.appspot.com/4bc7a4fe24f19f6d521796f2d9993958.png?GoogleAccessId=firebase-adminsdk-u1x3y%40chattr-userbase.iam.gserviceaccount.com&Expires=16447017600&Signature=pjx3MSoUuiwCCVqwqInZcTOzPtcjtZggRv%2FZ7W7s%2BUUYBoL3V2KsTgpyj7bwGBm6zHcyuNYVeB3WAD7QlvMKGi2Rthx2bh9P41n%2FdMfBUaXc8SBpgKqVK0nEf%2BjYkAUPq1ZUP%2F48AELAcSYfLAXcx5JH4C0LAIsQsT%2Fe98PNQn1HEDepE3y2pgPKaRMSXstkEjdvSa1livAbgGnSADj0vnwEAJjXQhHzt5q2cWX9MVEa40RlKdQQVdm4hzsMkMLi%2B5AiklEJYQ5cprqh%2FKBZZO9lmEUlgmo2%2F%2BF0VvT6WhLqa3MqRoE01ZbqUj0x5uPw4KuOpUEbldlImLykUjS5nw%3D%3D'
+var userPhoto = 'https://storage.googleapis.com/chattr-userbase.appspot.com/4bc7a4fe24f19f6d521796f2d9993958.png?GoogleAccessId=firebase-adminsdk-u1x3y%40chattr-userbase.iam.gserviceaccount.com&Expires=16447017600&Signature=pjx3MSoUuiwCCVqwqInZcTOzPtcjtZggRv%2FZ7W7s%2BUUYBoL3V2KsTgpyj7bwGBm6zHcyuNYVeB3WAD7QlvMKGi2Rthx2bh9P41n%2FdMfBUaXc8SBpgKqVK0nEf%2BjYkAUPq1ZUP%2F48AELAcSYfLAXcx5JH4C0LAIsQsT%2Fe98PNQn1HEDepE3y2pgPKaRMSXstkEjdvSa1livAbgGnSADj0vnwEAJjXQhHzt5q2cWX9MVEa40RlKdQQVdm4hzsMkMLi%2B5AiklEJYQ5cprqh%2FKBZZO9lmEUlgmo2%2F%2BF0VvT6WhLqa3MqRoE01ZbqUj0x5uPw4KuOpUEbldlImLykUjS5nw%3D%3D';
 var pages = [
   account = false,
   billing_payments = false,
@@ -11,16 +10,9 @@ var pages = [
   notifications = false,
   theme = false
 ]
-
 var userInfo = userinfo;
 setTimeout(renderAccount(), 1000);
-
-//page information
-
-var pageInfo; //socket emit
-
-//functions
-
+var pageInfo;
 function renderPage(pageTitle, pageData) {
   $('#right-area').empty();
   $('#right-area').append(`
@@ -29,20 +21,14 @@ function renderPage(pageTitle, pageData) {
       <h2 id="content-title"></h2>
       <div id="divider"></div>
     </div>
-    <div id="content-container"> </div>
-  `);
-
+    <div id="content-container"> </div>`);
   $('#content-title').html(pageTitle);
-
   if(pageData[0] == false) {
     $('#content-container').append(`
       <div id="empty-area">
         <div id="empty-message">Nothing is here yet..</div>
-      </div>
-    `);
-
+      </div>`);
   } else {
-    //Page setup
     $('html,body').scrollTop(0)
     switch(pageTitle) {
       case "Account": 
@@ -70,9 +56,6 @@ function renderPage(pageTitle, pageData) {
     
   }
 }
-
-//click functions
-
 $('#account').click(function(){
   if (!pages[0]) {
     closePages(account);
@@ -80,7 +63,6 @@ $('#account').click(function(){
     pages[0] = true
   }
 });
-
 $('#billing-payments').click(function(){
   if (!pages[1]) {
     closePages(account);
@@ -88,7 +70,6 @@ $('#billing-payments').click(function(){
     pages[1] = true;
   }
 });
-
 $('#security-login').click(function(){
   if (!pages[2]) {
     closePages(account);
@@ -96,7 +77,6 @@ $('#security-login').click(function(){
     pages[2] = true;
   }
 });
-
 $('#privacy').click(function(){
   if (!pages[3]) {
     closePages(account);
@@ -104,7 +84,6 @@ $('#privacy').click(function(){
     pages[3] = true;
   }
 });
-
 $('#blocking').click(function(){
   if (!pages[4]) {
     closePages(account);
@@ -112,7 +91,6 @@ $('#blocking').click(function(){
     pages[4] = true;
   }
 });
-
 $('#notifications').click(function(){
   if (!pages[5]) {
     closePages(account);
@@ -120,7 +98,6 @@ $('#notifications').click(function(){
     pages[5] = true;
   }
 });
-
 $('#theme').click(function(){
   if (!pages[6]) {
     closePages(account);
@@ -128,7 +105,6 @@ $('#theme').click(function(){
     pages[6] = true;
   }
 });
-
 $(document).click(function() {
   if(event.target.id != "post-options" && event.target.id != "messaging-options") {
     if($('.options-list')){
@@ -136,39 +112,30 @@ $(document).click(function() {
     }
   }
 })
-
-//page rendering
-
 function renderAccount() {
   let username
-  
   $('#empty-area').css('height', '7em');
   socket.emit('fetch-account-info', {
     session : getCookie('session')
   });
-
   $('#content-container').empty();
-  
   $('#content-container').append(`
     <div class="info-container">
       <h2>Username: </h2>
       <p id="username">${userInfo.name}</p>
       <img id="change-username" src="https://media.discordapp.net/attachments/651993623021355018/673546096714186787/unknown.png">
     </div>
-
     <div class="info-container">
       <h2>Password: </h2>
       <p>########</p>
       <img id="change-password" src="https://media.discordapp.net/attachments/651993623021355018/673546096714186787/unknown.png">
     </div>
-
     <div class="info-container">
       <h2>Email: </h2>
       <p id="email">${userInfo.email}</p>
       <img id="change-email" src="https://media.discordapp.net/attachments/651993623021355018/673546096714186787/unknown.png">
     </div>
   `);
-
   $('#right-area').append(`
     <div id="content-header">
       <div id="divider"></div>
