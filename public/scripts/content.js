@@ -19,7 +19,7 @@ class Card{
 		}
 }
 
-var listing = new Card('https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Birds", "Random person");
+
 // console.log(card.element);
 
 document.getElementById('content-container').appendChild(listing.element);
