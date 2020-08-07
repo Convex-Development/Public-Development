@@ -68,11 +68,12 @@
 	font-size: 1.1em;
 	width: 4em;
 	cursor: pointer;
-	border-radius: 2px;
-	transition: background 0.2s ease;
+  transition: 250ms;
+  border-radius: 7px;
 }
 #submit-post:hover {
-	background: #555;
+	background: rgb(3, 200, 235);
+  border-radius: 12px;
 }
 
 

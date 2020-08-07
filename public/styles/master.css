@@ -600,3 +600,6 @@ main {
   margin-top: 10vh;
   background: transparent;
 } 
+.bottomLinks {
+  transform: translate(27px, 15px);
+}
