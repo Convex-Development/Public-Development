@@ -22,11 +22,14 @@ class Card{
 
 // console.log(card.element);
 
-document.getElementById('content-container').appendChild(listing.element);
+//document.getElementById('content-container').appendChild(listing.element);
 
-document.querySelector('#content-type').addEventListener("change", function() {
+//document.querySelector('#content-type').addEventListener("change", function() {
+function onSelect(){
+  value = document.getElementById('content-type').value;
+  console.log(value);
   if (this.value == "Games") {
-    console.log(this.value);
+    console.log("Games");
     document.getElementById('main').innerHTML=`
       <div class="Dropdowns">
         <select id='content-type'>
@@ -42,7 +45,7 @@ document.querySelector('#content-type').addEventListener("change", function() {
 				  <option>Most Original</option>
 			  </select>
       </div>
-
+      <h1>GAMES</h1>
       <div id='cards-container'></div>
 		  <div class="containerfloat">
         <div class="progress" id="progress"></div>
@@ -55,7 +58,7 @@ document.querySelector('#content-type').addEventListener("change", function() {
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if (this.value == "Videos") {
-     console.log(this.value);
+    console.log("Videos");
      document.getElementById('main').innerHTML=`
       <div class="Dropdowns">
         <select id='content-type'>
@@ -84,6 +87,7 @@ document.querySelector('#content-type').addEventListener("change", function() {
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value =="Music"){
+    console.log("Music");
       document.getElementById('main').innerHTML=`
       <div class="Dropdowns">
         <select id='content-type'>
@@ -106,13 +110,16 @@ document.querySelector('#content-type').addEventListener("change", function() {
 			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
 			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
           <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
+
+          <button id="addSong" type="button">+</button>
+
 	  	</div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value == "Posts"){
-      console.log(this.value);
+    console.log("Posts");
       document.getElementById('main').innerHTML=`
       <div class="Dropdowns">
         <select id='content-type'>
@@ -141,4 +148,5 @@ document.querySelector('#content-type').addEventListener("change", function() {
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }
-});
+}
+//});

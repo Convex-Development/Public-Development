@@ -109,6 +109,32 @@ Play Pause Button .togglePlay {
 	color: black;
 	font-weight: bolder;
 }
+
+
+#addSong{
+  font-size: 2.5em;
+  position: fixed;
+  bottom: 12%;
+  right: 1%;
+  border-style: none;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-block;
+  background: #3cc6d8;
+  max-height: 1.5em;
+  max-width: 1.5em;
+  -webkit-box-shadow: 0px 0px 10px 5px #3cc6d8;
+  box-shadow: 0px 0px 20px 10px #3cc6d8;
+  border: solid;
+  border-color: #3cc6d8;
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+}
+#addSong:focus{
+  border: none;
+}
+
 body[theme="dark"] {
   background: rgb(54, 54, 54);
   transition: 1s;

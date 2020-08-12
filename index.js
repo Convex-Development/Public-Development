@@ -9,7 +9,7 @@ const express = require('express'),
 	fetch = require('node-fetch'),
 
 	// General
-	env = process.env,
+env = process.env,
 	path = require('path'),
 	fs = require('fs'),
   db = require('./db'),
