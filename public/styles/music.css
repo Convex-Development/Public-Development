@@ -112,6 +112,7 @@ Play Pause Button .togglePlay {
 
 
 #addSong{
+  user-select: none;
   font-size: 2.5em;
   position: fixed;
   bottom: 12%;
@@ -130,6 +131,22 @@ Play Pause Button .togglePlay {
   border-color: #3cc6d8;
   -webkit-user-select: none;
   -moz-user-focus: none;
+}
+#popup{
+  background-color: rgb(197, 197, 197);
+  position: fixed;
+  top: 20%;
+  height: 65%;
+  left: 15%;
+  width: 70%;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 2px;
+}
+#popup:hover{
+  border-color: #3cc6d8;
+  transition: 0.5s;
 }
 #addSong:focus{
   border: none;

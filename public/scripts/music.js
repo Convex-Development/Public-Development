@@ -1,9 +1,10 @@
-var card = new Song("https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3",'https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Birds", "A Bird");
-var card1 = new Song("https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3",'https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Test", "Another Bird");
-console.log(card.element);
-console.log(card1.element);
-document.getElementById('cards-container').appendChild(card.element);
-document.getElementById('cards-container').appendChild(card1.element);
+// const cards_container = document.getElementById('cards-container')
+//image, title, creator, description
+var card1 = new Song("https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3",'https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Test", "Another Bird").render(document.getElementById('cards-container'));
+// console.log(card.element);
+// console.log(card1.element);
+// document.getElementById('cards-container').appendChild(card.element);
+// document.getElementById('cards-container').appendChild(card1.element);
 
 var timer;
 var percent = 0;

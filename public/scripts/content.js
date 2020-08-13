@@ -1,12 +1,15 @@
 class Card {
 	constructor(image, title, creator, description) {
 		this.image = image
-		this.title = tile
+		this.title = title
 		this.creator = creator
 		this.description = description
-		this.element = this.render()
+		this.element = this.createElement()
 	}
-	render() {
+	render(target){
+		target.appendChild(this.element)
+	}
+	createElement() {
 		let card = document.createElement('div')
 		card.className = 'card'
 		card.innerHTML = 
@@ -51,7 +54,7 @@ function onSelect(){
     console.log("Games");
     document.getElementById('main').innerHTML= universal + `
       
-      <h1>GAMES</h1>
+      <h1 id="head">GAMES</h1>
       <div id='cards-container'></div>
 		  <div class="containerfloat">
         <div class="progress" id="progress"></div>
@@ -66,6 +69,7 @@ function onSelect(){
   }else if (this.value == "Videos") {
     console.log("Videos");
      document.getElementById('main').innerHTML= universal + `
+      <h1 id = "head">VIDEOS</h1>
       <div id='cards-container'></div>
 		  <div class="containerfloat">
         <div class="progress" id="progress"></div>
@@ -80,6 +84,8 @@ function onSelect(){
   }else if(this.value =="Music"){
     console.log("Music");
       document.getElementById('main').innerHTML= universal + `
+      <h1 id="head">MUSIC</h1>
+      <div id="addContent"></div>
       <div id='cards-container'></div>
 		  <div class="containerfloat">
         <div class="progress" id="progress"></div>
@@ -98,6 +104,7 @@ function onSelect(){
   }else if(this.value == "Posts"){
     console.log("Posts");
       document.getElementById('main').innerHTML= universal + `
+      <h1 id = "head">POSTS</h1>
       <div id='cards-container'></div>
 		  <div class="containerfloat">
         <div class="progress" id="progress"></div>
@@ -113,6 +120,31 @@ function onSelect(){
 }
 function onSelectAdd(){
     value = document.getElementById('addSong');
-    
+    popup = document.getElementById('addContent');
+    popup.innerHTML = `
+    <div id="popup">
+      <div id="pickFile">
+        <h3>Select a file to upload</3>
+        <form id = "musicFile"> 
+          <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"></label> <input type="submit" value="submit"> </form>
+      </div>
+
+      <div id="bannerImage">
+        <h3>Select a banner image</h3>
+        <form id = "musicFile"> 
+          <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"></label> <input type="submit" value="submit"> </form>
+      </div>
+
+      <div id="getAuthor">
+        <h3>Author of music</h3>
+        <p>Please make sure that the music you upload is not copyrighted.</p>
+        <form>
+          Author name: <input type = "text" name = "name">
+      </div>
+
+      
+    </div>
+
+    `
   }
 //});

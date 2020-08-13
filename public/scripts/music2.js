@@ -6,6 +6,9 @@ class Song{
 			this.artist = artist;
 			this.element = this.makeElement();
 		}
+		render(target) {
+			target.appendChild(this.element)
+		}
 	  makeElement(){
 			let card = document.createElement('div');
 			card.classList.add('card');

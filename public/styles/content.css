@@ -10,6 +10,12 @@ main {
 body[theme="dark"] #options-area {
 	background: #555555
 }
+#head{
+  top: 10%;
+  position: fixed;
+  left: 46%;
+
+}
 #search {
 	position: fixed;
 	top: 3.4em;
