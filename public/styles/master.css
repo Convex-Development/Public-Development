@@ -6,9 +6,8 @@
   background: transparent;
 }
 .round {
-  border-radius: 30px;
   border-color: black;
-  border-width: 3px;
+  border-width: 1.5px;
 }
 :root {
 	--background-primary: #a5c2d491;
@@ -41,12 +40,9 @@ html, body {
 	right: 9.7vw;
 	width: 33vw;
 	height: 15em;
-	border-radius: 5px;
-	overflow: scroll;
 	overflow-x: hidden;
 	z-index: 50 !important;
 	background: #B9B9B9;
-	box-shadow: 2px 2px 5px 1px rgba(168,168,168,1);
 }
 
 #load-more {
