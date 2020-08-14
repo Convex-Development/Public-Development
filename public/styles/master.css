@@ -7,7 +7,8 @@
 }
 .round {
   border-color: black;
-  border-width: 1.5px;
+  border-width: 3px;
+  border-radius: 30px;
 }
 :root {
 	--background-primary: #a5c2d491;
