@@ -46,13 +46,15 @@ main {
   cursor: pointer;
   background-position: 0% 0%;
   background-size: 210%;
-  -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out;
-  transition: background 200ms ease-in-out, color 200ms ease-in-out;
+  transition: 0.5s;
+  color: #ffffff;
 }
 
 .option:hover {
-  color: #fff;
+  color: rgb(0, 0, 0);
   background-position: 0 100%;
+  border-width: 3px;
+  border-color: #2196F3;
 }
 
 #options-area > #divider {
