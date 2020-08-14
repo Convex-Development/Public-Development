@@ -1,3 +1,4 @@
+const formidable = require('formidable');
 class Card {
 	constructor(image, title, creator, description) {
 		this.image = image
@@ -48,18 +49,20 @@ function onSelect(){
 				  <option>Most Original</option>
 			  </select>
       </div>
+
+      <div class="containerfloat">
+        <div class="progress" id="progress"></div>
+			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
+			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
+          <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
+	  	</div>
 	`
   if (this.value == "Games") {
     document.getElementById('main').innerHTML= universal + `
       
       <h1 id="head">GAMES</h1>
       <div id='cards-container'></div>
-		  <div class="containerfloat">
-        <div class="progress" id="progress"></div>
-			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
-			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
-          <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
-	  	</div>
+		  
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
@@ -68,12 +71,6 @@ function onSelect(){
      document.getElementById('main').innerHTML= universal + `
       <h1 id = "head">VIDEOS</h1>
       <div id='cards-container'></div>
-		  <div class="containerfloat">
-        <div class="progress" id="progress"></div>
-			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
-			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
-          <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
-	  	</div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
@@ -83,16 +80,6 @@ function onSelect(){
       <h1 id="head">MUSIC</h1>
       <div id="addContent"></div>
       <div id='cards-container'></div>
-		  <div class="containerfloat">
-        <div class="progress" id="progress"></div>
-			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
-			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
-          <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
-
-          <button id="addSong" type="button" 
-          onclick = "onSelectAdd();">+</button>
-
-	  	</div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
@@ -101,12 +88,6 @@ function onSelect(){
       document.getElementById('main').innerHTML= universal + `
       <h1 id = "head">POSTS</h1>
       <div id='cards-container'></div>
-		  <div class="containerfloat">
-        <div class="progress" id="progress"></div>
-			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
-			  	<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay"/>
-          <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class=""/>
-	  	</div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
@@ -122,9 +103,38 @@ function saveData(){
 
       description = document.getElementById("description").value;
       console.log(description);
-     
-        }
 
+      
+     
+    document.getElementById('popup').innerHTML = `
+      <div id="checkTOS">
+          <h1>Terms of Service</h1>
+          By continuing you agree to our Terms of Service which can be found <a href="/policy">here.</a>
+
+        <form>
+          <input type="radio" name="agreement" value="Agree" id = "agree">I agree!<br>
+          <input type="radio" name="agreement" value="Disagree">I don't agree.<br>
+        </form>
+
+        <input id = "submitTOS" type="submit" value="submit"onclick='testTOS();'> 
+      </div>
+
+    `;
+  
+
+
+}
+function testTOS(){
+    if(document.getElementById("agree").checked == true){
+      removeForm();
+    }else{
+      alert("To continue, you must accept our terms of agreement");
+    }
+  }
+
+function removeForm(){
+  $("#popup").fadeOut(500);
+}
 function onSelectAdd(){
     value = document.getElementById('addSong');
     popup = document.getElementById('addContent');
@@ -141,14 +151,14 @@ function onSelectAdd(){
       <div id="pickFile">
         <h3>Select a file to upload</3>
         <form id = "musicFile"> 
-          <input type="file" name="fileupload" value="fileupload" id="musicUpload"> <label for="fileupload"></label>
+        <input type="file", id="musicUpload" accept="audio/*> 
         </form>
       </div>
 
       <div id="bannerImage">
         <h3>Select a banner image</h3>
         <form id = "imgFile"> 
-          <input type="file" name="fileupload" value="fileupload" id="imageUpload"> <label for="fileupload"></label> 
+          <input type="file" id="imageUpload"> 
         </form>
       </div>
 

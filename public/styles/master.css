@@ -1,6 +1,5 @@
 .specialtyImage {
-  transform: translateX(-10px);
-  transform:translateY(-5px);
+  transform: translate(-10px, -5px);
 }
 .specialtyBar {
   background: transparent;
@@ -9,13 +8,14 @@
   border-color: black;
   border-width: 3px;
   border-radius: 30px;
+  transition: 0.5s;
 }
 :root {
 	--background-primary: #a5c2d491;
 	--background: rgb(248, 246, 246);
 	--dark-primary: #037bc0;
 	--light-primary: #18aaee;
-  --navbar-background: rgb(190, 190, 190);
+  --navbar-background: rgb(160, 160, 160);
 }
 @font-face {
 	font-family: Azonix;
@@ -396,9 +396,7 @@ body[theme="dark"] .dorito{
 
 body[theme="dark"] .round {
   background: black;
-  border-radius: 30px;
   border-color: rgb(255, 255, 255);
-  border-width: 3px;
 }
 
 
