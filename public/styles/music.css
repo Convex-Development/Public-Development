@@ -143,13 +143,52 @@ Play Pause Button .togglePlay {
   border-style: solid;
   border-color: rgb(0, 0, 0);
   border-width: 2px;
+  justify-content: center;
+  align-content: center;
+}
+#getTitle{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pickFile{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#bannerImage{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#getAuthor{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#getDescription{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#submitForm{
+  position: fixed;
+  transform: translate(675%, -60%);
+  border: solid;
+  border-color: rgb(87, 87, 87);
+  border-width: 2px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+}
+#submitForm:hover{
+  transition: 0.5s;
+  border-color: #3cc6d8;
 }
 #popup:hover{
   border-color: #3cc6d8;
   transition: 0.5s;
-}
-#addSong:focus{
-  border: none;
 }
 
 body[theme="dark"] {

@@ -33,7 +33,6 @@ class Card {
 
 function onSelect(){
   value = document.getElementById('content-type').value;
-  console.log(value);
 	let universal = `
 		<div class="Dropdowns">
         <select id='content-type' onchange="onSelect()">
@@ -51,7 +50,6 @@ function onSelect(){
       </div>
 	`
   if (this.value == "Games") {
-    console.log("Games");
     document.getElementById('main').innerHTML= universal + `
       
       <h1 id="head">GAMES</h1>
@@ -67,7 +65,6 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if (this.value == "Videos") {
-    console.log("Videos");
      document.getElementById('main').innerHTML= universal + `
       <h1 id = "head">VIDEOS</h1>
       <div id='cards-container'></div>
@@ -82,7 +79,6 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value =="Music"){
-    console.log("Music");
       document.getElementById('main').innerHTML= universal + `
       <h1 id="head">MUSIC</h1>
       <div id="addContent"></div>
@@ -102,7 +98,6 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value == "Posts"){
-    console.log("Posts");
       document.getElementById('main').innerHTML= universal + `
       <h1 id = "head">POSTS</h1>
       <div id='cards-container'></div>
@@ -118,33 +113,61 @@ function onSelect(){
 		<script src="/scripts/music.js"></script>`;
   }
 }
+function saveData(){
+      title = document.getElementById("title").value;
+      console.log(title);
+
+      author = document.getElementById("author").value;
+      console.log(author);
+
+      description = document.getElementById("description").value;
+      console.log(description);
+     
+        }
+
 function onSelectAdd(){
     value = document.getElementById('addSong');
     popup = document.getElementById('addContent');
     popup.innerHTML = `
     <div id="popup">
+
+      <div id="getTitle">
+        <h3>Name of song</h3>
+        <form>
+          Name of song: <input id="title" type="text" name = "name">
+        </form>
+      </div>
+      
       <div id="pickFile">
         <h3>Select a file to upload</3>
         <form id = "musicFile"> 
-          <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"></label> <input type="submit" value="submit"> </form>
+          <input type="file" name="fileupload" value="fileupload" id="musicUpload"> <label for="fileupload"></label>
+        </form>
       </div>
 
       <div id="bannerImage">
         <h3>Select a banner image</h3>
-        <form id = "musicFile"> 
-          <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"></label> <input type="submit" value="submit"> </form>
+        <form id = "imgFile"> 
+          <input type="file" name="fileupload" value="fileupload" id="imageUpload"> <label for="fileupload"></label> 
+        </form>
       </div>
 
       <div id="getAuthor">
         <h3>Author of music</h3>
         <p>Please make sure that the music you upload is not copyrighted.</p>
         <form>
-          Author name: <input type = "text" name = "name">
+          Author name: <input id = "author" type = "text" name = "name">
+        </form>
       </div>
 
-      
+      <div id="getDescription">
+        <h3>Description</h3>
+        <form>
+          Description: <input id = "description" type = "text" name = "name">
+        </form>
+      </div>
+      <input id = "submitForm" type="submit" value="submit" onclick='saveData();'> 
+        
     </div>
-
-    `
-  }
-//});
+    `;
+}

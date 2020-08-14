@@ -44,7 +44,6 @@ main {
   font-size: 1em;
   overflow: visible;
   cursor: pointer;
-  background-image: -webkit-linear-gradient(top, transparent 50%, black 50%);
   background-position: 0% 0%;
   background-size: 210%;
   -webkit-transition: background 200ms ease-in-out, color 200ms ease-in-out;
