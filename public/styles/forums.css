@@ -1,0 +1,37 @@
+#editor-container {
+    border: 1px solid #cccccc;
+    display: inline-block;
+}
+
+#editor-menu {
+    padding: 10px;
+}
+
+#editor-menu button {
+    font-size: 12px;
+    font-family: inherit;
+    border: 1px solid #777777;
+    background-color: white;
+    padding: 5px;
+    margin: 0 10px 0 0;
+}
+
+.highight-menu {
+    background-color: #777777 !important;
+    color: white !important;
+}
+
+#editor-text {
+    position: fixed;
+    width: 83.5em;
+    left: 1em;
+    height: 25em;
+    border-top: 1px solid #cccccc;
+    outline: none;
+    overflow: auto;
+    margin-top: 30px;
+}
+
+#editor-text img {
+    max-width: 250px;
+}

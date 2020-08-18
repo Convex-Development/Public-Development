@@ -6,8 +6,7 @@
 }
 .round {
   border-color: black;
-  border-width: 3px;
-  border-radius: 30px;
+  border-width: 1px;
   transition: 0.5s;
 }
 :root {

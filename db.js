@@ -15,7 +15,7 @@ const json = {
 	auth_uri: env.auth_uri,
 	token_uri: env.token_uri,
 	auth_provider_x509_cert_url: env.auth_provider_cert_url,
-	client_x509_cert_url: env.client_cert_url,
+	client_x509_cert_url: env.client_cert_url
 };
 
 admin.initializeApp({

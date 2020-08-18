@@ -1,4 +1,3 @@
-const formidable = require('formidable');
 class Card {
 	constructor(image, title, creator, description) {
 		this.image = image
@@ -41,6 +40,7 @@ function onSelect(){
           <option>Games</option>
           <option>Videos</option>
           <option>Posts</option>
+          <option>Forums</option>
         </select>
 			  <select id='content-stats'>
 				  <option>Most Popular</option>
@@ -48,8 +48,8 @@ function onSelect(){
 				  <option>New</option>
 				  <option>Most Original</option>
 			  </select>
-      </div>
-
+      </div> `
+  let musicPlayer = `
       <div class="containerfloat">
         <div class="progress" id="progress"></div>
 			    <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
@@ -58,7 +58,7 @@ function onSelect(){
 	  	</div>
 	`
   if (this.value == "Games") {
-    document.getElementById('main').innerHTML= universal + `
+    document.getElementById('main').innerHTML= universal + musicPlayer +`
       
       <h1 id="head">GAMES</h1>
       <div id='cards-container'></div>
@@ -68,7 +68,7 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if (this.value == "Videos") {
-     document.getElementById('main').innerHTML= universal + `
+     document.getElementById('main').innerHTML= universal + musicPlayer +`
       <h1 id = "head">VIDEOS</h1>
       <div id='cards-container'></div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
@@ -76,23 +76,50 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value =="Music"){
-      document.getElementById('main').innerHTML= universal + `
+      document.getElementById('main').innerHTML= universal + musicPlayer`
       <h1 id="head">MUSIC</h1>
       <div id="addContent"></div>
+      <button id="addSong" type="button" onclick = "onSelectAdd();">+</button>
       <div id='cards-container'></div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value == "Posts"){
-      document.getElementById('main').innerHTML= universal + `
+      document.getElementById('main').innerHTML= universal + musicPlayer +`
       <h1 id = "head">POSTS</h1>
+      <div id="popup"></div>
       <div id='cards-container'></div>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
+  }else if(this.value == "Forums"){
+      document.getElementById('main').innerHTML= universal + `
+      <h1 id = "head">Forums</h1>
+      <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="../styles/forums.css" rel="stylesheet" type="text/css" />
+<body>
+<div id="editor-container">
+    <div id="editor-menu">
+        <button id="bold-button" title="Bold">Bold</button>
+        <button id="underline-button" title="Underline">Underline</button>
+    </div>
+    <div id="editor-text" contenteditable="true" spellcheck="true"></div>
+</div>
+
+<script src="../scripts/forums.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="jquery-3.5.1.min.js"></script>
+</body>
+
+</html>`;
   }
+  
 }
 function saveData(){
       title = document.getElementById("title").value;
