@@ -1,7 +1,6 @@
 var socket;
 let currentForm = false; 
 
-
 const submit = document.getElementsByTagName('button');
 
 const main = document.querySelector('main');

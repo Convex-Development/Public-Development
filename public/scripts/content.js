@@ -76,7 +76,7 @@ function onSelect(){
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value =="Music"){
-      document.getElementById('main').innerHTML= universal + musicPlayer`
+      document.getElementById('main').innerHTML= universal + musicPlayer +`
       <h1 id="head">MUSIC</h1>
       <div id="addContent"></div>
       <button id="addSong" type="button" onclick = "onSelectAdd();">+</button>
@@ -96,28 +96,15 @@ function onSelect(){
 		<script src="/scripts/music.js"></script>`;
   }else if(this.value == "Forums"){
       document.getElementById('main').innerHTML= universal + `
-      <h1 id = "head">Forums</h1>
-      <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<link href="../styles/forums.css" rel="stylesheet" type="text/css" />
-<body>
-<div id="editor-container">
-    <div id="editor-menu">
-        <button id="bold-button" title="Bold">Bold</button>
-        <button id="underline-button" title="Underline">Underline</button>
-    </div>
-    <div id="editor-text" contenteditable="true" spellcheck="true"></div>
-</div>
-
-<script src="../scripts/forums.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="jquery-3.5.1.min.js"></script>
-</body>
-
-</html>`;
+       <div id="left-area">
+        <div id="options-area">
+          <div id="leftButton" class="option" onclick="genMine()">Your Writing</div>
+          <div id="leftButton" class="option" onclick =GenExplore()>Explore Forums</div>
+        </div>
+      </div>
+      <div id="main-content">
+      </div>
+      `;
   }
   
 }

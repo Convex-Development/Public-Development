@@ -1,6 +1,89 @@
+const root = document.getElementById('root-main')
+const render = (elem) => root.appendChild(elem)
+
+class Modal {
+	constructor(options) {
+		this.options = options
+		return this.createElement()
+	}
+	createElement() {
+		let div = document.createElement('div')
+		div.classList.add('modal-container')
+		div.classList.add('fade-in')
+		div.innerHTML = 
+		`
+			<div class="modal">
+				<img src="${this.options.src}" />
+				<div>
+					<h1>${this.options.title}</h1>
+					<p>Uploaded by ${this.options.artist}</p>
+					<p>${this.options.description}</p>
+					<div>
+						<button>Play</button>
+						<button>Save</button>				
+					</div>
+				</div>
+				<span class="x">✕</span>
+			</div>		
+		`
+		div.querySelector('span').addEventListener('click', () => {
+			div.remove()
+		})
+
+		return div
+	}
+}
+class Card {
+	constructor(options) {
+		this.options = options
+		return this.createElement()
+	}
+	createElement() {
+		let options = this.options
+		let div = document.createElement('div')
+		div.className = "song"
+		div.innerHTML =
+		`
+			<div>
+				<img src="${options.src}" alt="${options.title}"/>
+				<p>${options.title}</p>
+				<span>${options.artist}</span>
+			</div>
+			<div>
+				<div></div>
+			</div>
+		`
+		div.addEventListener('click', () => {
+			render(new Modal(options))
+		})
+		return div
+	}
+}
+
+const random = (arr) => arr[Math.floor(Math.random() * arr.length)]
+
+for(let i = 0; i < 10; i++) {
+	render(new Card({
+		src: 'https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png',
+		title: random([
+			'Song.mp4',
+			'YOOOOO',
+			'epic sauces',
+			'beat drops',
+			'zzzzzz',
+			'eat food today reeeee'
+		]),
+		artist: random([
+			'Ethan',
+			'AdCharity',
+			'Dark'
+		]),
+		description: 'blub blub blub'
+	}))
+}
 // const cards_container = document.getElementById('cards-container')
 //image, title, creator, description
-var card1 = new Song("https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3",'https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Test", "Another Bird").render(document.getElementById('cards-container'));
+// var card1 = new Song("https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3",'https://ichef.bbci.co.uk/news/1024/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg', "Test", "Another Bird").render(document.getElementById('cards-container'));
 // console.log(card.element);
 // console.log(card1.element);
 // document.getElementById('cards-container').appendChild(card.element);

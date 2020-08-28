@@ -1,29 +1,3 @@
-class Song{
-	  constructor(musicFile, image, title, artist){
-			this.file = musicFile;
-			this.image = image;
-			this.title = title; 
-			this.artist = artist;
-			this.element = this.makeElement();
-		}
-		render(target) {
-			target.appendChild(this.element)
-		}
-	  makeElement(){
-			let card = document.createElement('div');
-			card.classList.add('card');
-			card.innerHTML = `
-      <div class='img-container' style="background-image: url('${this.image}')"></div>
-      <div class='bottom'>
-				<p class='song-title'>${this.title}</p><p> by ${this.artist}</p>
-	    </div>
-	    `;
-	    return card;
-		}
-}
-
-
-
 function calculateTotalValue(length) {
   var minutes = Math.floor(length / 60),
     seconds_int = length - minutes * 60,

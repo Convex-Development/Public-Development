@@ -1,37 +1,64 @@
-#editor-container {
-    border: 1px solid #cccccc;
-    display: inline-block;
+:root {
+	--background-primary: #a5c2d491;
+	--background: whitesmoke;
+	--dark-primary: #037bc0;
+	--light-primary: #00a3ee;
+	--radius: 3px;
+	--navbar-background: rgb(190, 190, 190);
 }
 
-#editor-menu {
-    padding: 10px;
+#left-area {
+  border-radius: 1px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  height: 35em;
+  width: 20em;
+  left: 1em;
+  background: transparent;
 }
 
-#editor-menu button {
-    font-size: 12px;
-    font-family: inherit;
-    border: 1px solid #777777;
-    background-color: white;
-    padding: 5px;
-    margin: 0 10px 0 0;
+#options-area {
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100vh;
+  background: #B9B9B9;
+  border-style: solid;
+  border-color: var(--light-primary);
+  border-width: 1px;
+}
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 4em;
+  width: 100%;
+  font-size: 1em;
+  overflow: visible;
+  cursor: pointer;
+  background-position: 0% 0%;
+  background-size: 210%;
+  transition: 0.5s;
+  color: #ffffff;
 }
 
-.highight-menu {
-    background-color: #777777 !important;
-    color: white !important;
+.option:hover {
+  color: rgb(0, 0, 0);
+  background-position: 0 100%;
+  border-width: 3px;
+  border-color: #2196F3;
+}
+#leftButton{
+  border-bottom: 5px;
 }
 
-#editor-text {
-    position: fixed;
-    width: 83.5em;
-    left: 1em;
-    height: 25em;
-    border-top: 1px solid #cccccc;
-    outline: none;
-    overflow: auto;
-    margin-top: 30px;
-}
 
-#editor-text img {
-    max-width: 250px;
+#comingSoon{
+  width: 30%;
+  margin-left: 15em;
 }

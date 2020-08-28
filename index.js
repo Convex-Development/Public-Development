@@ -42,37 +42,39 @@ const socket = require('socket.io'),
 	io = socket(app.listen(3000));
 
 async function passUserToEjs(req, res, page){
+	if (page == 'pages/index' || page == 'pages/login') return res.render(page);
 	if (get_cookies(req)['session']) {
 		let token = get_cookies(req)['session'];
 		let user = await db.getUserBy('token', token);
 		console.log('USER', user);
-		if (!user) res.render(page, db.newUserObject());
+		if (!user) res.redirect('/login');
 		res.render(page, user);
 	}
-	else res.render(page, db.newUserObject());
+	else res.redirect('/login');
+	// else res.render(page, db.newUserObject());
 	// else res.redirect('/');
 }
 
 
 // recieve objects, combine them
 app.get('/', async (req, res) => {
-	// if (get_cookies(req)['session']) {
-	// 	let token = get_cookies(req)['session'];
-	// 	let user = await db.getUserBy('token', token).catch(console.log);
-	// 	if (user){
-	// 		let newToken = randID();
-	// 		res.cookie("session", newToken, {
-	// 			httpOnly: true, 
-	// 			overwrite: true
-	// 		});
-	// 		db.swapUserToken(token, newToken);
-	// 		user.token = newToken;
-	// 		res.render('pages/home', user);
-	// 	}
-	// 	else res.render('pages/index', { theme: 'light' });
-	// }
-	// else res.render('pages/index', { theme: 'light' });
-	res.render('pages/index', { theme: 'light' });
+	if (get_cookies(req)['session']) {
+		let token = get_cookies(req)['session'];
+		let user = await db.getUserBy('token', token).catch(console.log);
+		if (user){
+			let newToken = randID();
+			res.cookie("session", newToken, {
+				httpOnly: true, 
+				overwrite: true
+			});
+			db.swapUserToken(token, newToken);
+			user.token = newToken;
+			res.render('pages/home', user);
+		}
+		else res.render('pages/index', { theme: 'light' });
+	}
+	else res.render('pages/index', { theme: 'light' });
+	// res.render('pages/index', { theme: 'light' });
 });
 
 app.get('/home', (req, res) => { 
@@ -131,8 +133,6 @@ app.get('/policy', (req, res) => {
 	res.render('pages/policy', { darkTheme: getDarkTheme() });
 });
 
-
-
 app.post('/login', async (req, res) => {
 	data = req.body;
 	if(!data) return res.redirect('/login#Invalid-details');
@@ -169,7 +169,7 @@ app.post('/login', async (req, res) => {
 			res.redirect('/home');	
 		}
 		else{
-			res.redirect('/login#Invalid-login-details');
+			res.redirect('/login');
 		}
 	}
 });

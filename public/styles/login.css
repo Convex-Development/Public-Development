@@ -9,7 +9,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-  background-color: black;
+  background-color: rgb(182, 182, 182);
 }
 main {
 	background: gainsboro;
@@ -17,7 +17,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	padding: 0.5em;
-	box-shadow: 0 0 0.5em silver;
+	box-shadow: 0 0 0.5em rgb(38, 0, 255);
 	overflow: hidden;
 }
 main form {

@@ -142,12 +142,6 @@ body[theme="dark"] * {
   color: #bbbbbb !important;
 }
 
-body[theme="dark"] > #nav-bar {
-  background: rgb(77, 76, 76);
-  box-shadow: 0px 2px 5px 1px transparent;
-  transition: 1s;
-}
-
 body[theme="dark"] > #background-styles > #slanted-div-a {
   transition: 1s;
   background:  #324c6191;

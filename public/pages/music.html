@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-		<%- include('../partials/seo.html') %>
-    <!--<script src="/scripts/master.js"></script> -->
+<head>
+	<%- include('../partials/seo.html') %>
     <link rel="stylesheet" type='text/css' href='/styles/music.css'>
     <link rel="stylesheet" type='text/css' href='/styles/master.css'>
-  </head>
-  <body>
+</head>
+<body>
   	<%- include('../partials/header.html') %>
-		<div id='cards-container'>
+	<div id="root">
+		<div id="root-header">
+			<img src="https://www.techpluto.com/wp-content/uploads/2013/03/How-to-make-music-symbols-for-Facebook-Status.jpg" alt="music symbols" />
+			<h1>SONG BASE</h1>
 		</div>
+		<div id="root-main">
+		</div>
+	</div>
 		<div class="containerfloat">
-<div class="progress" id="progress"></div>
+		<div class="progress" id="progress"></div>
 			<audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
 				<input type="image" id="playbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913406982553611/wLYpKKgKsLAFwAAAABJRU5ErkJggg.png?width=603&height=452" onclick="togglePlay()" class="togglePlay">
-        <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class="">
+       	 <input type="image" id="stopbtn" src="https://media.discordapp.net/attachments/728653704168996866/730913424233463828/WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.png?width=603&height=452" onclick="stop()" class="">
 		</div>
 		<script src="/scripts/music2.js"></script>
 		<script src="/scripts/music.js"></script>

@@ -11,10 +11,11 @@
 }
 :root {
 	--background-primary: #a5c2d491;
-	--background: rgb(248, 246, 246);
+	--background: whitesmoke;
 	--dark-primary: #037bc0;
-	--light-primary: #18aaee;
-  --navbar-background: rgb(160, 160, 160);
+	--light-primary: #00a3ee;
+	--radius: 3px;
+	--navbar-background: rgb(190, 190, 190);
 }
 @font-face {
 	font-family: Azonix;
@@ -530,14 +531,7 @@ aside div > a:hover {
 		display: none;
 	}
 }
-:root {
-	--background-primary: #a5c2d491;
-	--background: whitesmoke;
-	--dark-primary: #037bc0;
-	--light-primary: #00a3ee;
-	--radius: 3px;
-	--navbar-background: rgb(190, 190, 190);
-}
+
 @font-face {
 	font-family: Azonix;
 	src: url("../Azonix.woff");
