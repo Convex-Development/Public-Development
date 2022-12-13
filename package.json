@@ -11,7 +11,7 @@
     "cookie-parser": "^1.4.5",
     "crypto-js": "^4.0.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^7.15.5",
     "firebase-admin": "^8.10.0",
     "firesql": "^2.0.2",
